@@ -9,7 +9,8 @@ build/
 uv.lock.tmp
 scripts/results/
 results/
-bench/results-*/
+bench/results-skew-clamped/
+bench/results-vacuous-*/
 wsl2-sitting-results.tar.gz
 .scope.md
 docs/wsl2-sitting.md

@@ -8,6 +8,14 @@ The published results were collected on an RTX 4070 Ti SUPER 16GB under
 WSL2 with the `wsl2-4070ti` profile; the harness itself is
 hardware-agnostic and driven entirely by `matrix.toml` and `profiles/*.env`.
 
+The per-cell result JSONs behind the README's numbers are checked in under
+`results-published/`, and `REPORT.md` is rendered from them (never edited
+by hand) with:
+
+```bash
+uv run python -m bench report --results bench/results-published --out bench/REPORT.md
+```
+
 ## Layout
 
 - `workloads/memory_agent_bench.py`: consumes `ai-hyz/MemoryAgentBench`

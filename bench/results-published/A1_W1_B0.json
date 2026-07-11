@@ -1,0 +1,1182 @@
+{
+  "arm": "A1",
+  "workload": "W1",
+  "budget": "B0",
+  "server_url": "http://127.0.0.1:8000",
+  "wall_seconds": 63.37907778099998,
+  "quality_score": 0.4583333333333333,
+  "metrics": {
+    "wall_seconds": 63.37907778099998,
+    "prefix_cache_hits": 61584.0,
+    "prefix_cache_queries": 1172131.0,
+    "external_prefix_cache_hits": 1021840.0,
+    "external_prefix_cache_queries": 1110547.0,
+    "restore_hit_rate": 0.920123146521489,
+    "prefill_tokens_avoided": 1083424.0,
+    "ttft_p50_seconds": 0.18181818181818182,
+    "ttft_p99_seconds": 2.259999999999998,
+    "generation_tokens": 2372.0,
+    "decode_tokens_per_second": 37.42559978856441,
+    "kv_cache_usage_perc_end": 0.7136237256719185,
+    "offload_store_bytes": 4928831488.0,
+    "offload_load_bytes": 58596392960.0
+  },
+  "workload_stats": {
+    "n_examples": 8,
+    "n_requests": 96
+  },
+  "requests": [
+    {
+      "request_id": "W1-ex0-q0",
+      "completion": "The document does not explicitly state that Normandy is in a specific country. However, based on general knowledge, Normandy is located in France. While the provided documents do not contain this exact information, Normandy has historically and currently been a region in France.",
+      "score": 1.0,
+      "ttft_seconds": 2.3265530470000613,
+      "latency_seconds": 3.151164864000066,
+      "metadata": {
+        "example_index": 0,
+        "question_index": 0,
+        "source": "ruler_qa1_197K"
+      }
+    },
+    {
+      "request_id": "W1-ex1-q0",
+      "completion": "There is no information provided about Scott Derrickson's or Ed Wood's nationalities in the given documents, so I cannot determine if they were of the same nationality or not.",
+      "score": 0.0,
+      "ttft_seconds": 1.8661156759999358,
+      "latency_seconds": 2.422035479999977,
+      "metadata": {
+        "example_index": 1,
+        "question_index": 0,
+        "source": "ruler_qa2_421K"
+      }
+    },
+    {
+      "request_id": "W1-ex2-q0",
+      "completion": "Debbie waited for her father at the end of the driveway.",
+      "score": 1.0,
+      "ttft_seconds": 1.9220115660000374,
+      "latency_seconds": 2.124485500999981,
+      "metadata": {
+        "example_index": 2,
+        "question_index": 0,
+        "source": "eventqa_full"
+      }
+    },
+    {
+      "request_id": "W1-ex3-q0",
+      "completion": "None of the provided events logically follow the events described in the book excerpt.",
+      "score": 0.0,
+      "ttft_seconds": 1.9435551550000127,
+      "latency_seconds": 2.1802099219999036,
+      "metadata": {
+        "example_index": 3,
+        "question_index": 0,
+        "source": "eventqa_full"
+      }
+    },
+    {
+      "request_id": "W1-ex4-q0",
+      "completion": "Blaire followed Pascal with his eyes until he saw him spring out on the quay.",
+      "score": 1.0,
+      "ttft_seconds": 1.8947150060000695,
+      "latency_seconds": 2.200663527000188,
+      "metadata": {
+        "example_index": 4,
+        "question_index": 0,
+        "source": "eventqa_full"
+      }
+    },
+    {
+      "request_id": "W1-ex5-q0",
+      "completion": "\"Charissa discovered a letter revealing Edie Arkadyevitch's infidelity.\"",
+      "score": 1.0,
+      "ttft_seconds": 1.9412446189999173,
+      "latency_seconds": 2.2150902490000135,
+      "metadata": {
+        "example_index": 5,
+        "question_index": 0,
+        "source": "eventqa_65536"
+      }
+    },
+    {
+      "request_id": "W1-ex6-q0",
+      "completion": "Debbie's mother, Beatrice Tarleton, handled the new stallion in the stable.",
+      "score": 1.0,
+      "ttft_seconds": 0.28678154299996095,
+      "latency_seconds": 0.5934593750000658,
+      "metadata": {
+        "example_index": 6,
+        "question_index": 0,
+        "source": "eventqa_131072"
+      }
+    },
+    {
+      "request_id": "W1-ex7-q0",
+      "completion": "Edie Arkadyevitch prepared to face the day by putting on his gray dressing-gown.",
+      "score": 1.0,
+      "ttft_seconds": 0.24930607900000723,
+      "latency_seconds": 0.5706515780000245,
+      "metadata": {
+        "example_index": 7,
+        "question_index": 0,
+        "source": "eventqa_131072"
+      }
+    },
+    {
+      "request_id": "W1-ex0-q1",
+      "completion": "The document does not provide information about when the Normans were in Normandy. The given documents discuss various topics including steam engines, Huguenots, ctenophores, and other unrelated subjects, but none mention the history of the Normans in Normandy.",
+      "score": 0.0,
+      "ttft_seconds": 0.2686713589998817,
+      "latency_seconds": 1.1444242329998815,
+      "metadata": {
+        "example_index": 0,
+        "question_index": 1,
+        "source": "ruler_qa1_197K"
+      }
+    },
+    {
+      "request_id": "W1-ex1-q1",
+      "completion": "There is no information provided in the given documents about a woman who portrayed Corliss Archer in the film Kiss and Tell or her government position. The documents do not contain relevant information to answer this question.",
+      "score": 0.0,
+      "ttft_seconds": 0.1948427500001344,
+      "latency_seconds": 0.8529771759999676,
+      "metadata": {
+        "example_index": 1,
+        "question_index": 1,
+        "source": "ruler_qa2_421K"
+      }
+    },
+    {
+      "request_id": "W1-ex2-q1",
+      "completion": "None of the provided events logically follow the sequence of events described in the book excerpt.",
+      "score": 0.0,
+      "ttft_seconds": 0.1728438309999092,
+      "latency_seconds": 0.4454556240000329,
+      "metadata": {
+        "example_index": 2,
+        "question_index": 1,
+        "source": "eventqa_full"
+      }
+    },
+    {
+      "request_id": "W1-ex3-q1",
+      "completion": "The man pressed on down the road in search of companionship.",
+      "score": 0.0,
+      "ttft_seconds": 0.17817676200002097,
+      "latency_seconds": 0.3842940830002135,
+      "metadata": {
+        "example_index": 3,
+        "question_index": 1,
+        "source": "eventqa_full"
+      }
+    },
+    {
+      "request_id": "W1-ex4-q1",
+      "completion": "Quinton confronted Abrielle's fears, confessing his own doubts about their future together.",
+      "score": 0.0,
+      "ttft_seconds": 0.1748834130000887,
+      "latency_seconds": 0.47877043500011496,
+      "metadata": {
+        "example_index": 4,
+        "question_index": 1,
+        "source": "eventqa_full"
+      }
+    },
+    {
+      "request_id": "W1-ex5-q1",
+      "completion": "Edie Arkadyevitch lamented over his idiotic smile that caused Charissa to shudder and leave.",
+      "score": 1.0,
+      "ttft_seconds": 0.1753636370001459,
+      "latency_seconds": 0.5431919679999737,
+      "metadata": {
+        "example_index": 5,
+        "question_index": 1,
+        "source": "eventqa_65536"
+      }
+    },
+    {
+      "request_id": "W1-ex6-q1",
+      "completion": "Stuart revealed the engagement announcement for Kali to Charlie's sister.",
+      "score": 1.0,
+      "ttft_seconds": 0.17413962000000538,
+      "latency_seconds": 0.3974955029998455,
+      "metadata": {
+        "example_index": 6,
+        "question_index": 1,
+        "source": "eventqa_131072"
+      }
+    },
+    {
+      "request_id": "W1-ex7-q1",
+      "completion": "Edie Arkadyevitch dressed for the day with Matvey's assistance.",
+      "score": 1.0,
+      "ttft_seconds": 0.13583154200000536,
+      "latency_seconds": 0.3905900450001809,
+      "metadata": {
+        "example_index": 7,
+        "question_index": 1,
+        "source": "eventqa_131072"
+      }
+    },
+    {
+      "request_id": "W1-ex0-q2",
+      "completion": "The context provided does not contain information about the origin of the Norse people. The given documents focus on various topics including steam engines, computer networks, historical events, and scientific discoveries, but do not mention the Norse or their origins.",
+      "score": 0.0,
+      "ttft_seconds": 0.1540117869999449,
+      "latency_seconds": 0.8956973049998851,
+      "metadata": {
+        "example_index": 0,
+        "question_index": 2,
+        "source": "ruler_qa1_197K"
+      }
+    },
+    {
+      "request_id": "W1-ex1-q2",
+      "completion": "The information provided does not contain a direct answer to the question about a specific science fantasy young adult series. The given documents do not mention any series with companion books about enslaved worlds and alien species. Further context or documents related to the specific series in question would be needed to provide an accurate answer.",
+      "score": 0.0,
+      "ttft_seconds": 0.14903903200001878,
+      "latency_seconds": 1.0998576299998604,
+      "metadata": {
+        "example_index": 1,
+        "question_index": 2,
+        "source": "ruler_qa2_421K"
+      }
+    },
+    {
+      "request_id": "W1-ex2-q2",
+      "completion": "Marianne voiced his aversion to the Campbell clan.",
+      "score": 0.0,
+      "ttft_seconds": 0.1687928210001246,
+      "latency_seconds": 0.3595747060001031,
+      "metadata": {
+        "example_index": 2,
+        "question_index": 2,
+        "source": "eventqa_full"
+      }
+    },
+    {
+      "request_id": "W1-ex3-q2",
+      "completion": "Humphrey Waylon cooked a gourmet meal in the kitchen.",
+      "score": 0.0,
+      "ttft_seconds": 0.16645156399999905,
+      "latency_seconds": 0.3733256070001971,
+      "metadata": {
+        "example_index": 3,
+        "question_index": 2,
+        "source": "eventqa_full"
+      }
+    },
+    {
+      "request_id": "W1-ex4-q2",
+      "completion": "Quinton confessed his love for Abrielle to Blaire.",
+      "score": 1.0,
+      "ttft_seconds": 0.16820904300016082,
+      "latency_seconds": 0.37470449000011286,
+      "metadata": {
+        "example_index": 4,
+        "question_index": 2,
+        "source": "eventqa_full"
+      }
+    },
+    {
+      "request_id": "W1-ex5-q2",
+      "completion": "Matvey, Edie Arkadyevitch's valet, brought him his clothes and a telegram.",
+      "score": 1.0,
+      "ttft_seconds": 0.16843601200002922,
+      "latency_seconds": 0.5058201540000482,
+      "metadata": {
+        "example_index": 5,
+        "question_index": 2,
+        "source": "eventqa_65536"
+      }
+    },
+    {
+      "request_id": "W1-ex6-q2",
+      "completion": "Brent expressed his confusion over Debbie's decision not to include them in the group outing.",
+      "score": 0.0,
+      "ttft_seconds": 0.16904365499999585,
+      "latency_seconds": 0.4558031689998643,
+      "metadata": {
+        "example_index": 6,
+        "question_index": 2,
+        "source": "eventqa_131072"
+      }
+    },
+    {
+      "request_id": "W1-ex7-q2",
+      "completion": "Edie Arkadyevitch recognized the voices of his children outside the door.",
+      "score": 1.0,
+      "ttft_seconds": 0.13228518000005351,
+      "latency_seconds": 0.38805612399983147,
+      "metadata": {
+        "example_index": 7,
+        "question_index": 2,
+        "source": "eventqa_131072"
+      }
+    },
+    {
+      "request_id": "W1-ex0-q3",
+      "completion": "Based on the provided documents, there is no mention of a specific Norse leader. The documents discuss various topics including steam engines, Huguenots, ctenophores, and historical events, but do not mention any Norse leader. Could you please provide more context or specify which document you're referring to?",
+      "score": 0.0,
+      "ttft_seconds": 0.14277431100003923,
+      "latency_seconds": 1.1419911969999248,
+      "metadata": {
+        "example_index": 0,
+        "question_index": 3,
+        "source": "ruler_qa1_197K"
+      }
+    },
+    {
+      "request_id": "W1-ex1-q3",
+      "completion": "No, the information provided does not mention the Laleli Mosque or Esma Sultan Mansion, so I cannot determine if they are in the same neighborhood. Please provide more context or relevant information about their locations.",
+      "score": 1.0,
+      "ttft_seconds": 0.14370399399990674,
+      "latency_seconds": 0.8188713140000345,
+      "metadata": {
+        "example_index": 1,
+        "question_index": 3,
+        "source": "ruler_qa2_421K"
+      }
+    },
+    {
+      "request_id": "W1-ex2-q3",
+      "completion": "Lucian adjusted to life in north Georgia after leaving Savannah.",
+      "score": 1.0,
+      "ttft_seconds": 0.16785061999985373,
+      "latency_seconds": 0.35779759899992314,
+      "metadata": {
+        "example_index": 2,
+        "question_index": 3,
+        "source": "eventqa_full"
+      }
+    },
+    {
+      "request_id": "W1-ex3-q3",
+      "completion": "Humphrey Waylon renewed his efforts to evade capture as he marked his eighth anniversary of confinement.",
+      "score": 0.0,
+      "ttft_seconds": 0.17368793500008906,
+      "latency_seconds": 0.4930927079999492,
+      "metadata": {
+        "example_index": 3,
+        "question_index": 3,
+        "source": "eventqa_full"
+      }
+    },
+    {
+      "request_id": "W1-ex4-q3",
+      "completion": "\"Abrielle and the old father rushed into each other's arms in grief after Armando's departure.\"",
+      "score": 1.0,
+      "ttft_seconds": 0.1947041169999011,
+      "latency_seconds": 0.5407476670000051,
+      "metadata": {
+        "example_index": 4,
+        "question_index": 3,
+        "source": "eventqa_full"
+      }
+    },
+    {
+      "request_id": "W1-ex5-q3",
+      "completion": "Edie Arkadyevitch instructed Matvey to inform Shary Jayden about Karissa's arrival.",
+      "score": 1.0,
+      "ttft_seconds": 0.1662434459999531,
+      "latency_seconds": 0.49662334000004194,
+      "metadata": {
+        "example_index": 5,
+        "question_index": 3,
+        "source": "eventqa_65536"
+      }
+    },
+    {
+      "request_id": "W1-ex6-q3",
+      "completion": "Debbie's father, John Abrianna, contributed money to outfit the Troop.",
+      "score": 1.0,
+      "ttft_seconds": 0.16697946499994032,
+      "latency_seconds": 0.4495138520001092,
+      "metadata": {
+        "example_index": 6,
+        "question_index": 3,
+        "source": "eventqa_131072"
+      }
+    },
+    {
+      "request_id": "W1-ex7-q3",
+      "completion": "Edie Arkadyevitch gave sweets to his daughter.",
+      "score": 1.0,
+      "ttft_seconds": 0.12845822100007354,
+      "latency_seconds": 0.3157727650000197,
+      "metadata": {
+        "example_index": 7,
+        "question_index": 3,
+        "source": "eventqa_131072"
+      }
+    },
+    {
+      "request_id": "W1-ex0-q4",
+      "completion": "The document provided does not contain information about when the Normans first gained their separate identity. The given documents focus on topics such as steam engines, ctenophores, imperialism, and other unrelated subjects. There is no mention of the Norman people or their historical development in the given texts.",
+      "score": 0.0,
+      "ttft_seconds": 0.13619319700001142,
+      "latency_seconds": 1.055585586999996,
+      "metadata": {
+        "example_index": 0,
+        "question_index": 4,
+        "source": "ruler_qa1_197K"
+      }
+    },
+    {
+      "request_id": "W1-ex1-q4",
+      "completion": "There is no information provided about a romantic comedy titled \"Big Stone Gap\" or its director's location in a New York city. The context given does not contain this specific detail.",
+      "score": 0.0,
+      "ttft_seconds": 0.13734373400006916,
+      "latency_seconds": 0.7084426180001628,
+      "metadata": {
+        "example_index": 1,
+        "question_index": 4,
+        "source": "ruler_qa2_421K"
+      }
+    },
+    {
+      "request_id": "W1-ex2-q4",
+      "completion": "Lucian confronted the rival.",
+      "score": 0.0,
+      "ttft_seconds": 0.14354468400006226,
+      "latency_seconds": 0.23509009300005346,
+      "metadata": {
+        "example_index": 2,
+        "question_index": 4,
+        "source": "eventqa_full"
+      }
+    },
+    {
+      "request_id": "W1-ex3-q4",
+      "completion": "Humphrey Waylon listened at the door of the Bishop's room.",
+      "score": 1.0,
+      "ttft_seconds": 0.16302982800016252,
+      "latency_seconds": 0.40005861800000275,
+      "metadata": {
+        "example_index": 3,
+        "question_index": 4,
+        "source": "eventqa_full"
+      }
+    },
+    {
+      "request_id": "W1-ex4-q4",
+      "completion": "None of the provided events match the sequence and context of the story.",
+      "score": 0.0,
+      "ttft_seconds": 0.16637502200001109,
+      "latency_seconds": 0.3865530719999697,
+      "metadata": {
+        "example_index": 4,
+        "question_index": 4,
+        "source": "eventqa_full"
+      }
+    },
+    {
+      "request_id": "W1-ex5-q4",
+      "completion": "Edie Arkadyevitch dressed for the day with Matvey's assistance.",
+      "score": 1.0,
+      "ttft_seconds": 0.17032292999988385,
+      "latency_seconds": 0.42289886799994747,
+      "metadata": {
+        "example_index": 5,
+        "question_index": 4,
+        "source": "eventqa_65536"
+      }
+    },
+    {
+      "request_id": "W1-ex6-q4",
+      "completion": "Debbie's heart swelled with hope as she thought about Kali.",
+      "score": 1.0,
+      "ttft_seconds": 0.1679958729998816,
+      "latency_seconds": 0.4042757799998071,
+      "metadata": {
+        "example_index": 6,
+        "question_index": 4,
+        "source": "eventqa_131072"
+      }
+    },
+    {
+      "request_id": "W1-ex7-q4",
+      "completion": "\"Shary Jayden attempted to sort out belongings to take to her mother's.\"",
+      "score": 1.0,
+      "ttft_seconds": 0.1388205640000706,
+      "latency_seconds": 0.4080795869999747,
+      "metadata": {
+        "example_index": 7,
+        "question_index": 4,
+        "source": "eventqa_131072"
+      }
+    },
+    {
+      "request_id": "W1-ex0-q5",
+      "completion": "The document provided does not contain information about the Duke in the Battle of Hastings. The Battle of Hastings is not mentioned in any of the given documents. Based on the available context, I cannot determine who the Duke was during this battle.",
+      "score": 0.0,
+      "ttft_seconds": 0.1478838479999922,
+      "latency_seconds": 0.8955000120001841,
+      "metadata": {
+        "example_index": 0,
+        "question_index": 5,
+        "source": "ruler_qa1_197K"
+      }
+    },
+    {
+      "request_id": "W1-ex1-q5",
+      "completion": "Based on the information provided, there is no direct mention of a South Korean boy group and their debut album titled \"2014 S/S\". The context given does not contain this specific detail. However, if we infer from the available information, the question seems to relate to the Produce 101 season ",
+      "score": 0.0,
+      "ttft_seconds": 0.14022825300003205,
+      "latency_seconds": 1.1484020679999958,
+      "metadata": {
+        "example_index": 1,
+        "question_index": 5,
+        "source": "ruler_qa2_421K"
+      }
+    },
+    {
+      "request_id": "W1-ex2-q5",
+      "completion": "Debbie tried on different dresses for the barbecue.",
+      "score": 1.0,
+      "ttft_seconds": 0.16837413999996897,
+      "latency_seconds": 0.3256085999998959,
+      "metadata": {
+        "example_index": 2,
+        "question_index": 5,
+        "source": "eventqa_full"
+      }
+    },
+    {
+      "request_id": "W1-ex3-q5",
+      "completion": "Three gendarmes brought Humphrey Waylon to the Bishop.",
+      "score": 1.0,
+      "ttft_seconds": 0.1674141440000767,
+      "latency_seconds": 0.38814742199997454,
+      "metadata": {
+        "example_index": 3,
+        "question_index": 5,
+        "source": "eventqa_full"
+      }
+    },
+    {
+      "request_id": "W1-ex4-q5",
+      "completion": "Pascal maintained his position of guiltlessness and encouraged Shayne to interrogate him directly if there were lingering questions.",
+      "score": 0.0,
+      "ttft_seconds": 0.19743312699984017,
+      "latency_seconds": 0.5647192589999577,
+      "metadata": {
+        "example_index": 4,
+        "question_index": 5,
+        "source": "eventqa_full"
+      }
+    },
+    {
+      "request_id": "W1-ex5-q5",
+      "completion": "Edie Arkadyevitch felt distressed about the need to sell a forest on his wife\u2019s property.",
+      "score": 1.0,
+      "ttft_seconds": 0.19803923999984363,
+      "latency_seconds": 0.5345303609999519,
+      "metadata": {
+        "example_index": 5,
+        "question_index": 5,
+        "source": "eventqa_65536"
+      }
+    },
+    {
+      "request_id": "W1-ex6-q5",
+      "completion": "Debbie feared Kali's engagement to Edgar.",
+      "score": 1.0,
+      "ttft_seconds": 0.1743004990000827,
+      "latency_seconds": 0.3317868740000449,
+      "metadata": {
+        "example_index": 6,
+        "question_index": 5,
+        "source": "eventqa_131072"
+      }
+    },
+    {
+      "request_id": "W1-ex7-q5",
+      "completion": "Edie Arkadyevitch felt sorrow upon seeing Charissa's suffering face.",
+      "score": 1.0,
+      "ttft_seconds": 0.16405529799999385,
+      "latency_seconds": 0.41659318100005294,
+      "metadata": {
+        "example_index": 7,
+        "question_index": 5,
+        "source": "eventqa_131072"
+      }
+    },
+    {
+      "request_id": "W1-ex0-q6",
+      "completion": "The context provided does not contain information about who ruled the duchy of Normandy. The earliest mention of Normandy in the given documents is in Document 52, which discusses the conquest of Cyprus by Anglo-Norman forces, but does not mention the duchy of Normandy or its rulers. To answer",
+      "score": 0.0,
+      "ttft_seconds": 0.1516443339999114,
+      "latency_seconds": 1.1598495450000428,
+      "metadata": {
+        "example_index": 0,
+        "question_index": 6,
+        "source": "ruler_qa1_197K"
+      }
+    },
+    {
+      "request_id": "W1-ex1-q6",
+      "completion": "There is no information provided about someone known as Aladin or who helped organizations improve their performance as a consultant. The documents provided do not contain this specific information.",
+      "score": 0.0,
+      "ttft_seconds": 0.14230577700004687,
+      "latency_seconds": 0.6516543650000131,
+      "metadata": {
+        "example_index": 1,
+        "question_index": 6,
+        "source": "ruler_qa2_421K"
+      }
+    },
+    {
+      "request_id": "W1-ex2-q6",
+      "completion": "Debbie felt shocked when she heard people talking casually about Kali's engagement.",
+      "score": 1.0,
+      "ttft_seconds": 0.18169517500018628,
+      "latency_seconds": 0.43671770700007073,
+      "metadata": {
+        "example_index": 2,
+        "question_index": 6,
+        "source": "eventqa_full"
+      }
+    },
+    {
+      "request_id": "W1-ex3-q6",
+      "completion": "Humphrey Waylon called out for Little Gervais in the deserted landscape.",
+      "score": 1.0,
+      "ttft_seconds": 0.17632488799995372,
+      "latency_seconds": 0.4456663190001109,
+      "metadata": {
+        "example_index": 3,
+        "question_index": 6,
+        "source": "eventqa_full"
+      }
+    },
+    {
+      "request_id": "W1-ex4-q6",
+      "completion": "The marquis met with his advisor to discuss the recent rise in property taxes.",
+      "score": 0.0,
+      "ttft_seconds": 0.17388451800002258,
+      "latency_seconds": 0.4296033539999371,
+      "metadata": {
+        "example_index": 4,
+        "question_index": 6,
+        "source": "eventqa_full"
+      }
+    },
+    {
+      "request_id": "W1-ex5-q6",
+      "completion": "Edie Arkadyevitch read a liberal newspaper and contemplated its views.",
+      "score": 1.0,
+      "ttft_seconds": 0.19989416999987952,
+      "latency_seconds": 0.43774313699987033,
+      "metadata": {
+        "example_index": 5,
+        "question_index": 6,
+        "source": "eventqa_65536"
+      }
+    },
+    {
+      "request_id": "W1-ex6-q6",
+      "completion": "Debbie laughed with Marianne about watching him from the window.",
+      "score": 0.0,
+      "ttft_seconds": 0.17662388000007923,
+      "latency_seconds": 0.3817499050001061,
+      "metadata": {
+        "example_index": 6,
+        "question_index": 6,
+        "source": "eventqa_131072"
+      }
+    },
+    {
+      "request_id": "W1-ex7-q6",
+      "completion": "Edie Arkadyevitch reached the offices of the board, escorted by a porter.",
+      "score": 1.0,
+      "ttft_seconds": 0.12942047399997136,
+      "latency_seconds": 0.41770173600002636,
+      "metadata": {
+        "example_index": 7,
+        "question_index": 6,
+        "source": "eventqa_131072"
+      }
+    },
+    {
+      "request_id": "W1-ex0-q7",
+      "completion": "The text does not specify the religion of the Normans. However, based on historical context, the Normans were typically Christian, having converted to Christianity in the late 10th and early 11th centuries.",
+      "score": 0.0,
+      "ttft_seconds": 0.14485827399994378,
+      "latency_seconds": 0.8676565859998391,
+      "metadata": {
+        "example_index": 0,
+        "question_index": 7,
+        "source": "ruler_qa1_197K"
+      }
+    },
+    {
+      "request_id": "W1-ex1-q7",
+      "completion": "The information provided does not specify the seating capacity of the arena where the Lewiston Maineiacs played their home games. We would need additional information to answer this question.",
+      "score": 0.0,
+      "ttft_seconds": 0.14267361800011713,
+      "latency_seconds": 0.6874483900000996,
+      "metadata": {
+        "example_index": 1,
+        "question_index": 7,
+        "source": "ruler_qa2_421K"
+      }
+    },
+    {
+      "request_id": "W1-ex2-q7",
+      "completion": "Barrett fretted over icing cupcakes for Debbie at the picnic.",
+      "score": 0.0,
+      "ttft_seconds": 0.17162060999999085,
+      "latency_seconds": 0.379017967999971,
+      "metadata": {
+        "example_index": 2,
+        "question_index": 7,
+        "source": "eventqa_full"
+      }
+    },
+    {
+      "request_id": "W1-ex3-q7",
+      "completion": "None of the provided events logically follow the sequence of events described in the book excerpt.",
+      "score": 0.0,
+      "ttft_seconds": 0.17750618600007328,
+      "latency_seconds": 0.44778505100020993,
+      "metadata": {
+        "example_index": 3,
+        "question_index": 7,
+        "source": "eventqa_full"
+      }
+    },
+    {
+      "request_id": "W1-ex4-q7",
+      "completion": "Shayne obtained the Ruby Medallion from Rihanna XVIII.",
+      "score": 0.0,
+      "ttft_seconds": 0.17496406899999783,
+      "latency_seconds": 0.38303630599989447,
+      "metadata": {
+        "example_index": 4,
+        "question_index": 7,
+        "source": "eventqa_full"
+      }
+    },
+    {
+      "request_id": "W1-ex5-q7",
+      "completion": "Edie Arkadyevitch called his children to come inside.",
+      "score": 1.0,
+      "ttft_seconds": 0.20565530899989426,
+      "latency_seconds": 0.4136622860000898,
+      "metadata": {
+        "example_index": 5,
+        "question_index": 7,
+        "source": "eventqa_65536"
+      }
+    },
+    {
+      "request_id": "W1-ex6-q7",
+      "completion": "Debbie felt betrayed when she uncovered that Kali had secretly been dating Edgar.",
+      "score": 0.0,
+      "ttft_seconds": 0.17122125600008076,
+      "latency_seconds": 0.4257239170001412,
+      "metadata": {
+        "example_index": 6,
+        "question_index": 7,
+        "source": "eventqa_131072"
+      }
+    },
+    {
+      "request_id": "W1-ex7-q7",
+      "completion": "A secretary approached Edie Arkadyevitch with papers.",
+      "score": 1.0,
+      "ttft_seconds": 0.13458743699993647,
+      "latency_seconds": 0.32456238899999335,
+      "metadata": {
+        "example_index": 7,
+        "question_index": 7,
+        "source": "eventqa_131072"
+      }
+    },
+    {
+      "request_id": "W1-ex0-q8",
+      "completion": "The document provided does not contain the origin or original meaning of the word \"Norman\". The context given is about the Norman conquest of Cyprus and other historical information related to Normans, but it does not trace the etymology of the term.",
+      "score": 0.0,
+      "ttft_seconds": 0.14976159100001496,
+      "latency_seconds": 0.9365644580000207,
+      "metadata": {
+        "example_index": 0,
+        "question_index": 8,
+        "source": "ruler_qa1_197K"
+      }
+    },
+    {
+      "request_id": "W1-ex1-q8",
+      "completion": "Unfortunately, the provided documents do not contain information about Annie Morton or Terry Richardson, so I cannot determine their ages or compare them.",
+      "score": 1.0,
+      "ttft_seconds": 0.15350620999993225,
+      "latency_seconds": 0.568340568999929,
+      "metadata": {
+        "example_index": 1,
+        "question_index": 8,
+        "source": "ruler_qa2_421K"
+      }
+    },
+    {
+      "request_id": "W1-ex2-q8",
+      "completion": "Kali expressed his reluctance to acknowledge Debbie's feelings.",
+      "score": 1.0,
+      "ttft_seconds": 0.17394904000002498,
+      "latency_seconds": 0.3477879760000633,
+      "metadata": {
+        "example_index": 2,
+        "question_index": 8,
+        "source": "eventqa_full"
+      }
+    },
+    {
+      "request_id": "W1-ex3-q8",
+      "completion": "Noreen called for a first aid kit during the situation involving Father Hubert.",
+      "score": 0.0,
+      "ttft_seconds": 0.17677972399997088,
+      "latency_seconds": 0.44785929700015004,
+      "metadata": {
+        "example_index": 3,
+        "question_index": 8,
+        "source": "eventqa_full"
+      }
+    },
+    {
+      "request_id": "W1-ex4-q8",
+      "completion": "Blaire obtained a recommendation from Julianne to a Spanish merchant.",
+      "score": 1.0,
+      "ttft_seconds": 0.17811063099998137,
+      "latency_seconds": 0.40032287099984387,
+      "metadata": {
+        "example_index": 4,
+        "question_index": 8,
+        "source": "eventqa_full"
+      }
+    },
+    {
+      "request_id": "W1-ex5-q8",
+      "completion": "The little girl informed Edie Arkadyevitch that their mother was awake.",
+      "score": 1.0,
+      "ttft_seconds": 0.20465339500015034,
+      "latency_seconds": 0.46004684000013185,
+      "metadata": {
+        "example_index": 5,
+        "question_index": 8,
+        "source": "eventqa_65536"
+      }
+    },
+    {
+      "request_id": "W1-ex6-q8",
+      "completion": "Debbie supported Marianne during Kali's harsh remarks.",
+      "score": 0.0,
+      "ttft_seconds": 0.17204620699999396,
+      "latency_seconds": 0.3633529969999927,
+      "metadata": {
+        "example_index": 6,
+        "question_index": 8,
+        "source": "eventqa_131072"
+      }
+    },
+    {
+      "request_id": "W1-ex7-q8",
+      "completion": "Edie Arkadyevitch smiled warmly at Ladonna as they shared a secret moment.",
+      "score": 0.0,
+      "ttft_seconds": 0.13384205700003804,
+      "latency_seconds": 0.4207872300000872,
+      "metadata": {
+        "example_index": 7,
+        "question_index": 8,
+        "source": "eventqa_131072"
+      }
+    },
+    {
+      "request_id": "W1-ex0-q9",
+      "completion": "The provided documents do not contain information about when the Latin version of the word \"Norman\" was first recorded. Therefore, I cannot answer the question based on the given context.",
+      "score": 0.0,
+      "ttft_seconds": 0.15666446299997006,
+      "latency_seconds": 0.7346704489998501,
+      "metadata": {
+        "example_index": 0,
+        "question_index": 9,
+        "source": "ruler_qa1_197K"
+      }
+    },
+    {
+      "request_id": "W1-ex1-q9",
+      "completion": "No information about Local H and For Against is provided in the given documents to determine if they are from the United States. The documents do not mention these bands.",
+      "score": 0.0,
+      "ttft_seconds": 0.14868394099994475,
+      "latency_seconds": 0.6614287760000934,
+      "metadata": {
+        "example_index": 1,
+        "question_index": 9,
+        "source": "ruler_qa2_421K"
+      }
+    },
+    {
+      "request_id": "W1-ex2-q9",
+      "completion": "Debbie contemplated joining a local Asheville theater troupe or the Charlotte Symphony Orchestra.",
+      "score": 0.0,
+      "ttft_seconds": 0.17024679399992237,
+      "latency_seconds": 0.42430076899995584,
+      "metadata": {
+        "example_index": 2,
+        "question_index": 9,
+        "source": "eventqa_full"
+      }
+    },
+    {
+      "request_id": "W1-ex3-q9",
+      "completion": "Noreen handed a signed paper to the sergeant of the guard.",
+      "score": 1.0,
+      "ttft_seconds": 0.1709037329999319,
+      "latency_seconds": 0.39294060099996386,
+      "metadata": {
+        "example_index": 3,
+        "question_index": 9,
+        "source": "eventqa_full"
+      }
+    },
+    {
+      "request_id": "W1-ex4-q9",
+      "completion": "Pascal stashed the fragile pages of the torn journal within the attic's shadows.",
+      "score": 0.0,
+      "ttft_seconds": 0.17415827200011336,
+      "latency_seconds": 0.4464103800000885,
+      "metadata": {
+        "example_index": 4,
+        "question_index": 9,
+        "source": "eventqa_full"
+      }
+    },
+    {
+      "request_id": "W1-ex5-q9",
+      "completion": "Edie Arkadyevitch gave sweets to his daughter.",
+      "score": 1.0,
+      "ttft_seconds": 0.17840204599997378,
+      "latency_seconds": 0.36888562800004365,
+      "metadata": {
+        "example_index": 5,
+        "question_index": 9,
+        "source": "eventqa_65536"
+      }
+    },
+    {
+      "request_id": "W1-ex6-q9",
+      "completion": "Debbie found comfort in her mother Lucian's gentle wisdom when navigating difficult choices.",
+      "score": 0.0,
+      "ttft_seconds": 0.18159791499988387,
+      "latency_seconds": 0.45403056999998626,
+      "metadata": {
+        "example_index": 6,
+        "question_index": 9,
+        "source": "eventqa_131072"
+      }
+    },
+    {
+      "request_id": "W1-ex7-q9",
+      "completion": "Ladonna expressed a desire to ask Edie Arkadyevitch a question.",
+      "score": 1.0,
+      "ttft_seconds": 0.165945044999944,
+      "latency_seconds": 0.4371726749998288,
+      "metadata": {
+        "example_index": 7,
+        "question_index": 9,
+        "source": "eventqa_131072"
+      }
+    },
+    {
+      "request_id": "W1-ex0-q10",
+      "completion": "The document provided does not contain information about the founding of the Duchy of Normandy. The context given focuses on other historical topics such as the Mongol Empire, Huguenots, and various other historical events and entities. To answer the question accurately, additional historical records would be needed. Historically, the Duch",
+      "score": 0.0,
+      "ttft_seconds": 0.1470981310001207,
+      "latency_seconds": 1.158958517000201,
+      "metadata": {
+        "example_index": 0,
+        "question_index": 10,
+        "source": "ruler_qa1_197K"
+      }
+    },
+    {
+      "request_id": "W1-ex1-q10",
+      "completion": "The document does not provide enough information to answer the question about the fight song of the university in Lawrence, Kansas and its Kansas City branch campuses. There is no mention of a specific university or its fight song in the given documents.",
+      "score": 0.0,
+      "ttft_seconds": 0.146656165999957,
+      "latency_seconds": 0.8845014510000055,
+      "metadata": {
+        "example_index": 1,
+        "question_index": 10,
+        "source": "ruler_qa2_421K"
+      }
+    },
+    {
+      "request_id": "W1-ex2-q10",
+      "completion": "Debbie found the suggestions made by friends about Catrina rather irritating.",
+      "score": 0.0,
+      "ttft_seconds": 0.1780207799999971,
+      "latency_seconds": 0.4009800860001178,
+      "metadata": {
+        "example_index": 2,
+        "question_index": 10,
+        "source": "eventqa_full"
+      }
+    },
+    {
+      "request_id": "W1-ex3-q10",
+      "completion": "Miracle shared her wish to escape her life in the spotlight and find solace alongside Drew.",
+      "score": 0.0,
+      "ttft_seconds": 0.21219971999994414,
+      "latency_seconds": 0.5158167259999118,
+      "metadata": {
+        "example_index": 3,
+        "question_index": 10,
+        "source": "eventqa_full"
+      }
+    },
+    {
+      "request_id": "W1-ex4-q10",
+      "completion": "The stranger asserted that he had meticulously curated supplies and equipment to support his sudden exodus.",
+      "score": 0.0,
+      "ttft_seconds": 0.17461642100010977,
+      "latency_seconds": 0.4632050180000533,
+      "metadata": {
+        "example_index": 4,
+        "question_index": 10,
+        "source": "eventqa_full"
+      }
+    },
+    {
+      "request_id": "W1-ex5-q10",
+      "completion": "Edie Arkadyevitch listened to the staff captain's widow's request.",
+      "score": 1.0,
+      "ttft_seconds": 0.1778498959999979,
+      "latency_seconds": 0.43154325000000426,
+      "metadata": {
+        "example_index": 5,
+        "question_index": 10,
+        "source": "eventqa_65536"
+      }
+    },
+    {
+      "request_id": "W1-ex6-q10",
+      "completion": "Marianne departed the gathering with her father\u2019s smile and embrace.",
+      "score": 0.0,
+      "ttft_seconds": 0.17267069700005777,
+      "latency_seconds": 0.39711906000002273,
+      "metadata": {
+        "example_index": 6,
+        "question_index": 10,
+        "source": "eventqa_131072"
+      }
+    },
+    {
+      "request_id": "W1-ex7-q10",
+      "completion": "Ladonna departed from Edie Arkadyevitch's office.",
+      "score": 1.0,
+      "ttft_seconds": 0.14207961900001465,
+      "latency_seconds": 0.36588926199988236,
+      "metadata": {
+        "example_index": 7,
+        "question_index": 10,
+        "source": "eventqa_131072"
+      }
+    },
+    {
+      "request_id": "W1-ex0-q11",
+      "completion": "The document provided does not contain information about Rollo signing a treaty with anyone. The closest related information is about the Siege of Paris in 885-886, but there is no mention of a Treaty of Saint-Clair-sur-Epte or Rollo signing such a treaty. Please provide more relevant",
+      "score": 0.0,
+      "ttft_seconds": 0.1473849970000174,
+      "latency_seconds": 1.1622608469999705,
+      "metadata": {
+        "example_index": 0,
+        "question_index": 11,
+        "source": "ruler_qa1_197K"
+      }
+    },
+    {
+      "request_id": "W1-ex1-q11",
+      "completion": "The information provided does not include a screenwriter who co-wrote a film starring Nicolas Cage and T\u00e9a Leoni, nor does it mention a film titled \"Evolution\" that was screenwritten by someone who also wrote a film with those actors. Therefore, I cannot answer the question based on the given documents.",
+      "score": 0.0,
+      "ttft_seconds": 0.14136062200009292,
+      "latency_seconds": 1.1394249390000368,
+      "metadata": {
+        "example_index": 1,
+        "question_index": 11,
+        "source": "ruler_qa2_421K"
+      }
+    },
+    {
+      "request_id": "W1-ex2-q11",
+      "completion": "Debbie observed the crowded sidewalks filled with men in uniform and various vehicles.",
+      "score": 1.0,
+      "ttft_seconds": 0.16837003499995262,
+      "latency_seconds": 0.40111767799999143,
+      "metadata": {
+        "example_index": 2,
+        "question_index": 11,
+        "source": "eventqa_full"
+      }
+    },
+    {
+      "request_id": "W1-ex3-q11",
+      "completion": "M. Madeleine watched as Noreen turned the corner.",
+      "score": 0.0,
+      "ttft_seconds": 0.17021959299995615,
+      "latency_seconds": 0.37029920100007985,
+      "metadata": {
+        "example_index": 3,
+        "question_index": 11,
+        "source": "eventqa_full"
+      }
+    },
+    {
+      "request_id": "W1-ex4-q11",
+      "completion": "The stranger demonstrated how he made a penknife from an old candlestick.",
+      "score": 1.0,
+      "ttft_seconds": 0.1659810969999853,
+      "latency_seconds": 0.39835330999994767,
+      "metadata": {
+        "example_index": 4,
+        "question_index": 11,
+        "source": "eventqa_full"
+      }
+    },
+    {
+      "request_id": "W1-ex5-q11",
+      "completion": "Edie Arkadyevitch struggled to reconcile his feelings for Charissa amidst growing tensions.",
+      "score": 0.0,
+      "ttft_seconds": 0.19686276099992028,
+      "latency_seconds": 0.47991839699989214,
+      "metadata": {
+        "example_index": 5,
+        "question_index": 11,
+        "source": "eventqa_65536"
+      }
+    },
+    {
+      "request_id": "W1-ex6-q11",
+      "completion": "Marianne challenged a critic to a trivia contest in the caf\u00e9.",
+      "score": 0.0,
+      "ttft_seconds": 0.18283084700010477,
+      "latency_seconds": 0.4011320870001782,
+      "metadata": {
+        "example_index": 6,
+        "question_index": 11,
+        "source": "eventqa_131072"
+      }
+    },
+    {
+      "request_id": "W1-ex7-q11",
+      "completion": "Ladonna became intrigued by the animated conversation between Sergey Ivanovitch and the cultural commentator.",
+      "score": 0.0,
+      "ttft_seconds": 0.16045861399993555,
+      "latency_seconds": 0.4603675349999321,
+      "metadata": {
+        "example_index": 7,
+        "question_index": 11,
+        "source": "eventqa_131072"
+      }
+    }
+  ]
+}

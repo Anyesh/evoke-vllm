@@ -17,6 +17,7 @@ import httpx
 
 from bench.arms import load_profile
 from bench.matrix import build_dry_run_plan, load_matrix, render_dry_run
+from bench.report import render_report
 from bench.runner import run_cell
 from bench.workloads.factory import build_workload, mab_config_from_spec
 from bench.workloads.memory_agent_bench import fetch_rows
@@ -120,6 +121,20 @@ def cmd_prefetch(args: argparse.Namespace) -> int:
     return exit_code
 
 
+def cmd_report(args: argparse.Namespace) -> int:
+    results_dir = Path(args.results)
+    if not results_dir.is_dir():
+        print(f"no results directory at {results_dir}", file=sys.stderr)
+        return 2
+    report = render_report(results_dir)
+    if args.out:
+        Path(args.out).write_text(report)
+        print(f"wrote {args.out}")
+    else:
+        print(report, end="")
+    return 0
+
+
 def build_arg_parser() -> argparse.ArgumentParser:
     parser = argparse.ArgumentParser(prog="bench", description=__doc__)
     subparsers = parser.add_subparsers(dest="command", required=True)
@@ -153,6 +168,13 @@ def build_arg_parser() -> argparse.ArgumentParser:
     prefetch_parser.add_argument("--matrix", default=str(DEFAULT_MATRIX_PATH))
     prefetch_parser.add_argument("--workload", action="append", default=None)
     prefetch_parser.set_defaults(func=cmd_prefetch)
+
+    report_parser = subparsers.add_parser(
+        "report", help="render REPORT.md tables from per-cell result JSONs"
+    )
+    report_parser.add_argument("--results", default=str(DEFAULT_RESULTS_DIR))
+    report_parser.add_argument("--out", default=None)
+    report_parser.set_defaults(func=cmd_report)
 
     return parser
 

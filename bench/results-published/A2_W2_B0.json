@@ -1,0 +1,738 @@
+{
+  "arm": "A2",
+  "workload": "W2",
+  "budget": "B0",
+  "server_url": "http://127.0.0.1:8000",
+  "wall_seconds": 78.83543979600017,
+  "quality_score": 0.3220338983050847,
+  "metrics": {
+    "wall_seconds": 78.83543979600017,
+    "prefix_cache_hits": 16464.0,
+    "prefix_cache_queries": 727030.0,
+    "external_prefix_cache_hits": 607200.0,
+    "external_prefix_cache_queries": 710566.0,
+    "restore_hit_rate": 0.8545300506919836,
+    "prefill_tokens_avoided": 623664.0,
+    "ttft_p50_seconds": 0.18676470588235294,
+    "ttft_p99_seconds": 2.3893749999999994,
+    "generation_tokens": 3647.0,
+    "decode_tokens_per_second": 46.260920335286,
+    "kv_cache_usage_perc_end": 0.0,
+    "offload_store_bytes": 5850005504.0,
+    "offload_load_bytes": 34819276800.0
+  },
+  "workload_stats": {
+    "n_examples": 8,
+    "n_requests": 59
+  },
+  "requests": [
+    {
+      "request_id": "W2-ex0-q0",
+      "completion": "{\"answer\":\"C. The Brandt couple\", \"reasoning\":\"While the provided context does not explicitly mention the death of a character, the question asks which couple is related to the death of the deceased. Given the options and the context provided, the Brandt couple (number 61) is the most relevant",
+      "score": 1.0,
+      "ttft_seconds": 1.930849321000096,
+      "latency_seconds": 2.92484324499992,
+      "metadata": {
+        "example_index": 0,
+        "question_index": 0,
+        "source": "detective_qa"
+      }
+    },
+    {
+      "request_id": "W2-ex1-q0",
+      "completion": "{\"answer\":\"C. The outsider killed at the gathering\", \"reasoning\":\"Rudy's death is described as occurring suddenly at the entrance during the gathering, which aligns with the scenario of an outsider being killed at the event.\", \"Mr. Rudy's sudden death at the entrance suggests an unexpected and external cause.\",",
+      "score": 0.0,
+      "ttft_seconds": 1.7601521710002999,
+      "latency_seconds": 2.7565344110003025,
+      "metadata": {
+        "example_index": 1,
+        "question_index": 0,
+        "source": "detective_qa"
+      }
+    },
+    {
+      "request_id": "W2-ex2-q0",
+      "completion": "{\"answer\":\"B. He is not satisfied with this job.\", \"reasoning\":\"Anthony expresses dissatisfaction with his current job, stating 'But this job isn't really my thing.' and mentioning that he needs to take 'these chatty hens' to the Rozz Graveyard, indicating his reluctance and lack of enthusiasm",
+      "score": 1.0,
+      "ttft_seconds": 1.7738901859997895,
+      "latency_seconds": 2.7692855949999284,
+      "metadata": {
+        "example_index": 2,
+        "question_index": 0,
+        "source": "detective_qa"
+      }
+    },
+    {
+      "request_id": "W2-ex3-q0",
+      "completion": "{\"answer\":\"B. Dissatisfied with Field's defense outcome\", \"reasoning\":\"The context indicates that Monte Field is described as 'one of the city's most unscrupulous lawyers', suggesting he may have a history of unethical practices. Additionally, Inspector Quinn mentions 'some things about him that are not pleasant',",
+      "score": 0.0,
+      "ttft_seconds": 1.7491249710001284,
+      "latency_seconds": 2.7435260279999056,
+      "metadata": {
+        "example_index": 3,
+        "question_index": 0,
+        "source": "detective_qa"
+      }
+    },
+    {
+      "request_id": "W2-ex4-q0",
+      "completion": "{\"answer\":\"A. Blue Hat Stranger\", \"reasoning\":\"The Blue Hat Stranger is directly linked to Donohue's disappearance through George Fisher's account. Fisher mentions seeing a man in a blue hat who disappeared around the same time as Donohue.\", \"Mr. Fisher described a man with a blue hat who",
+      "score": 1.0,
+      "ttft_seconds": 1.7464258029999655,
+      "latency_seconds": 2.7470139160000144,
+      "metadata": {
+        "example_index": 4,
+        "question_index": 0,
+        "source": "detective_qa"
+      }
+    },
+    {
+      "request_id": "W2-ex5-q0",
+      "completion": "{\"answer\":\"A. Itoh\", \"reasoning\":\"While the specific names and details of who wrote the letter of good wishes for the twins are not directly stated in the provided context, based on the narrative and options given, Itoh is the most logical choice. The context does not provide explicit information about",
+      "score": 0.0,
+      "ttft_seconds": 1.7451559490000363,
+      "latency_seconds": 2.7505340279999473,
+      "metadata": {
+        "example_index": 5,
+        "question_index": 0,
+        "source": "detective_qa"
+      }
+    },
+    {
+      "request_id": "W2-ex6-q0",
+      "completion": "{\"answer\":\"A. Adore\", \"reasoning\":\"Hakamura's actions and words throughout the narrative indicate a deep affection and admiration for Yukine.\",\n\"From the text, we can infer that Hakamura is extremely protective and caring towards Yukine, often referring to him with endearments and showing great concern",
+      "score": 1.0,
+      "ttft_seconds": 1.7407561240001996,
+      "latency_seconds": 2.7473283039998933,
+      "metadata": {
+        "example_index": 6,
+        "question_index": 0,
+        "source": "detective_qa"
+      }
+    },
+    {
+      "request_id": "W2-ex7-q0",
+      "completion": "{\"answer\":\"C. X\u012bchu\u0101n de m\u00e8imei\", \"reasoning\":\"Menghu referred to Xichuan as 'teacher', indicating a teacher-student relationship, and also mentioned 'my little brother', suggesting she is Xichuan's sister.\", \"Xichuan called her 'Little M",
+      "score": 1.0,
+      "ttft_seconds": 1.7435606519998146,
+      "latency_seconds": 2.748182283999995,
+      "metadata": {
+        "example_index": 7,
+        "question_index": 0,
+        "source": "detective_qa"
+      }
+    },
+    {
+      "request_id": "W2-ex0-q1",
+      "completion": "{\"answer\":\"A. Sheila Webb\", \"reasoning\":\"Sheila Webb was the stenographer who was at the scene of the crime and witnessed the body. Miss Pema is the homeowner who was also present but did not seem to have any direct involvement. Miss Martin Dale is the manager of the document printing agency",
+      "score": 0.0,
+      "ttft_seconds": 0.1591068819998327,
+      "latency_seconds": 1.1616473689996383,
+      "metadata": {
+        "example_index": 0,
+        "question_index": 1,
+        "source": "detective_qa"
+      }
+    },
+    {
+      "request_id": "W2-ex1-q1",
+      "completion": "{\"answer\":\"A. That is herself.\", \"reasoning\":\"The text does not provide information suggesting Letitia Blacklock is anyone other than herself. The narrative describes her as the mistress of the house and organizing the event, indicating she is hosting under her own identity.\"}",
+      "score": 0.0,
+      "ttft_seconds": 0.1496324440004173,
+      "latency_seconds": 1.026003639999999,
+      "metadata": {
+        "example_index": 1,
+        "question_index": 1,
+        "source": "detective_qa"
+      }
+    },
+    {
+      "request_id": "W2-ex2-q1",
+      "completion": "{\"answer\":\"A. Dislike\", \"reasoning\":\"The Earl of Carrington's interactions with George Romax are marked by annoyance and reluctance. \", \"The Earl of Carrington fidgeted uncomfortably and wished to avoid listening to Lord Roxane's lengthy speech.\", \"Lord Carrington was eager to escape from",
+      "score": 1.0,
+      "ttft_seconds": 0.1492646589999822,
+      "latency_seconds": 1.1519670249999763,
+      "metadata": {
+        "example_index": 2,
+        "question_index": 1,
+        "source": "detective_qa"
+      }
+    },
+    {
+      "request_id": "W2-ex3-q1",
+      "completion": "{\"answer\":\"D. murderer took away Field's hat when leaving.\", \"reasoning\":\"The passage states that Ellery noticed the absence of Field's high-top hat and commented on it, indicating that the murderer had taken it with them when they left the scene.\"}",
+      "score": 1.0,
+      "ttft_seconds": 0.1523685590000241,
+      "latency_seconds": 1.0127329420001843,
+      "metadata": {
+        "example_index": 3,
+        "question_index": 1,
+        "source": "detective_qa"
+      }
+    },
+    {
+      "request_id": "W2-ex4-q1",
+      "completion": "{\"answer\":\"D. Guards\", \"reasoning\":\"Mr. George Fisher described a man wearing a blue hat who disappeared from the group during their visit to the British Museum. Additionally, the night watchman at the museum reported seeing a man leave before the group did, which aligns with the description of the man in",
+      "score": 0.0,
+      "ttft_seconds": 0.15124244100024953,
+      "latency_seconds": 1.1541951240001254,
+      "metadata": {
+        "example_index": 4,
+        "question_index": 1,
+        "source": "detective_qa"
+      }
+    },
+    {
+      "request_id": "W2-ex5-q1",
+      "completion": "{\"answer\":\"A. Mist Drawings\", \"reasoning\":\"Mist Drawings is a poetic and artistic name, which does not suggest any criminal characteristics. The other names (Sugihiko, Xi Yan, and Anna Sophia) are more common and less artistic, making them more plausible suspects in a serial murder",
+      "score": 0.0,
+      "ttft_seconds": 0.1513211040000897,
+      "latency_seconds": 1.1543163760002244,
+      "metadata": {
+        "example_index": 5,
+        "question_index": 1,
+        "source": "detective_qa"
+      }
+    },
+    {
+      "request_id": "W2-ex6-q1",
+      "completion": "{\"answer\":\"A. Having ambition\", \"reasoning\":\"Higashide Shozo is a character who likely has ambition based on the context provided.\", \"context_needed\":\"From the given text, there is no direct information about Higashide Shozo. However, considering the options, if we infer that H",
+      "score": 1.0,
+      "ttft_seconds": 0.14996318000021347,
+      "latency_seconds": 1.151955695000197,
+      "metadata": {
+        "example_index": 6,
+        "question_index": 1,
+        "source": "detective_qa"
+      }
+    },
+    {
+      "request_id": "W2-ex7-q1",
+      "completion": "{\"answer\":\"B. Being killed by others\", \"reasoning\":\"Akagi Yuki was involved in a case where she was suspected of killing her parents but was later acquitted due to a claim of mental incapacity at the time of the crime. This implies that someone else was responsible for the murder of her parents.\"",
+      "score": 1.0,
+      "ttft_seconds": 0.14897256599988395,
+      "latency_seconds": 1.1527032190001592,
+      "metadata": {
+        "example_index": 7,
+        "question_index": 1,
+        "source": "detective_qa"
+      }
+    },
+    {
+      "request_id": "W2-ex0-q2",
+      "completion": "{\"answer\":\"D. Miss Pema Chodron\", \"reasoning\":\"The clock labeled 'Rosemary' was placed in Miss Pemarcho's hand by Detective Hakast, indicating she took it to examine it.\"}",
+      "score": 0.0,
+      "ttft_seconds": 0.1507683680001719,
+      "latency_seconds": 0.8986221840000326,
+      "metadata": {
+        "example_index": 0,
+        "question_index": 2,
+        "source": "detective_qa"
+      }
+    },
+    {
+      "request_id": "W2-ex1-q2",
+      "completion": "{\"answer\":\"B. Dora ingested poison.\", \"reasoning\":\"The context does not provide specific details about how Dora died, but given the options and the need to choose the most plausible scenario based on common mystery plot elements, ingestion of poison is a common and effective method in such narratives.\"}",
+      "score": 0.0,
+      "ttft_seconds": 0.17488231299967083,
+      "latency_seconds": 1.1565975659996184,
+      "metadata": {
+        "example_index": 1,
+        "question_index": 2,
+        "source": "detective_qa"
+      }
+    },
+    {
+      "request_id": "W2-ex2-q2",
+      "completion": "{\"answer\":\"D. The task of delivering the manuscript was specifically arranged by Jimmy, a friend of Anthony, and Anthony did not want to refuse his friend's kindness.\", \"reasoning\":\"Anthony initially expressed reluctance to take on the task of delivering the manuscript, indicating that he was not eager to leave his tour guide job",
+      "score": 0.0,
+      "ttft_seconds": 0.17621784599987222,
+      "latency_seconds": 1.168813914999646,
+      "metadata": {
+        "example_index": 2,
+        "question_index": 2,
+        "source": "detective_qa"
+      }
+    },
+    {
+      "request_id": "W2-ex3-q2",
+      "completion": "{\"answer\":\"D. The killer wanted to transfer the blame to Morgan.\", \"reasoning\":\"The scenario describes a complex situation where the killer needed to ensure that suspicion would fall on Morgan. By sending a false anonymous letter inviting Morgan to the performance, the killer created a plausible reason for Morgan to be present, thus divert",
+      "score": 1.0,
+      "ttft_seconds": 0.14941073899990442,
+      "latency_seconds": 1.1425700029999462,
+      "metadata": {
+        "example_index": 3,
+        "question_index": 2,
+        "source": "detective_qa"
+      }
+    },
+    {
+      "request_id": "W2-ex4-q2",
+      "completion": "{\"answer\":\"C. Malicious destruction of museums\", \"reasoning\":\"The person wearing a blue hat broke the glass display case, which suggests an intention beyond mere theft. Given the context of the story, the individual appears to be acting out of a desire for attention or to convey a message, aligning with malicious",
+      "score": 0.0,
+      "ttft_seconds": 0.15223645299965938,
+      "latency_seconds": 1.1463892849997137,
+      "metadata": {
+        "example_index": 4,
+        "question_index": 2,
+        "source": "detective_qa"
+      }
+    },
+    {
+      "request_id": "W2-ex5-q2",
+      "completion": "{\"answer\":\"C. Xi Yan\", \"reasoning\":\"Kagetora's affection for Xi Yan is evident through various interactions and descriptions in the narrative, showcasing a deep liking and admiration for her.\"}",
+      "score": 0.0,
+      "ttft_seconds": 0.15114762800021708,
+      "latency_seconds": 0.79774083600023,
+      "metadata": {
+        "example_index": 5,
+        "question_index": 2,
+        "source": "detective_qa"
+      }
+    },
+    {
+      "request_id": "W2-ex6-q2",
+      "completion": "{\"answer\":\"B. 200 Shizuko Tajima\", \"reasoning\":\"While the exact details of who leaked the information about Chigusa Yuki to Nagisa Ooe are not explicitly stated in the given context, based on typical narrative patterns in such stories, it is often a character with a",
+      "score": 0.0,
+      "ttft_seconds": 0.15587617900018813,
+      "latency_seconds": 1.1525549279999723,
+      "metadata": {
+        "example_index": 6,
+        "question_index": 2,
+        "source": "detective_qa"
+      }
+    },
+    {
+      "request_id": "W2-ex7-q2",
+      "completion": "{\"answer\":\"D. Shunobu Akagi\", \"reasoning\":\"While the provided context does not explicitly mention the development of the RedMagic system version 3, it does provide background on Shunobu Akagi, a prominent figure in the field of virtual reality and computer science. Given her status as",
+      "score": 1.0,
+      "ttft_seconds": 0.14863421799964271,
+      "latency_seconds": 1.1474433929997758,
+      "metadata": {
+        "example_index": 7,
+        "question_index": 2,
+        "source": "detective_qa"
+      }
+    },
+    {
+      "request_id": "W2-ex0-q3",
+      "completion": "{\"answer\":\"C. Second wife of Brand\", \"reasoning\":\"From the context, Mrs. Brand is mentioned as receiving a large sum of money from her late grandfather, making her the sole survivor of the family. This implies she is Brand's wife, and given the information that she is Canadian and met Brand during",
+      "score": 1.0,
+      "ttft_seconds": 0.15003960500007452,
+      "latency_seconds": 1.150262123000175,
+      "metadata": {
+        "example_index": 0,
+        "question_index": 3,
+        "source": "detective_qa"
+      }
+    },
+    {
+      "request_id": "W2-ex1-q3",
+      "completion": "{\"answer\":\"B. Because she had to survive in the village with another identity after the war\", \"reasoning\":\"The story does not explicitly mention Charlotte hiding her identity as Letitia Blacklock, but based on the context of the story, it implies that Miss Blacklock is hosting a murder mystery event due to a",
+      "score": 0.0,
+      "ttft_seconds": 0.1498988839998674,
+      "latency_seconds": 1.1502312470001925,
+      "metadata": {
+        "example_index": 1,
+        "question_index": 3,
+        "source": "detective_qa"
+      }
+    },
+    {
+      "request_id": "W2-ex2-q3",
+      "completion": "{\"answer\":\"C. The extortionist is Virginia's lover, Virginia doesn't want to have any further contact with him, and giving him money is to get rid of him.\", \"reasoning\":\"While the provided context does not explicitly mention Virginia paying a ransom, the narrative describes Virginia as someone who is charming, influential",
+      "score": 0.0,
+      "ttft_seconds": 0.17603159999998752,
+      "latency_seconds": 1.1768450569998095,
+      "metadata": {
+        "example_index": 2,
+        "question_index": 3,
+        "source": "detective_qa"
+      }
+    },
+    {
+      "request_id": "W2-ex3-q3",
+      "completion": "{\"answer\":\"C. Audience\", \"reasoning\":\"The story details that the audience was initially agitated and suspicious, and one member, William Bosack, provided a detailed account of finding the dead man. Additionally, the presence of multiple audience members and the chaotic scene suggest a possibility of a member being the killer.",
+      "score": 0.0,
+      "ttft_seconds": 0.15030995500001154,
+      "latency_seconds": 1.1519322030003423,
+      "metadata": {
+        "example_index": 3,
+        "question_index": 3,
+        "source": "detective_qa"
+      }
+    },
+    {
+      "request_id": "W2-ex4-q3",
+      "completion": "{\"answer\":\"B. Hamnet Sedley\", \"reasoning\":\"Dr. Aless's true identity is revealed to be Hamnet Sedley.\", \"Mr. Fisher mentions that Dr. Aless is a special guard at the British Museum, and later it is revealed that Hamnet Sedley is the special guard at the British",
+      "score": 0.0,
+      "ttft_seconds": 0.15085759100020368,
+      "latency_seconds": 1.1519795550002527,
+      "metadata": {
+        "example_index": 4,
+        "question_index": 3,
+        "source": "detective_qa"
+      }
+    },
+    {
+      "request_id": "W2-ex5-q3",
+      "completion": "{\"answer\":\"C. Mist painting\", \"reasoning\":\"The context does not provide specific details about the murderer, but based on the options given and the mysterious and atmospheric setting described, 'Mist painting' fits the tone and style of a suspenseful, potentially supernatural or artistic crime.\"}",
+      "score": 0.0,
+      "ttft_seconds": 0.1634245270001884,
+      "latency_seconds": 1.1027630060002593,
+      "metadata": {
+        "example_index": 5,
+        "question_index": 3,
+        "source": "detective_qa"
+      }
+    },
+    {
+      "request_id": "W2-ex6-q3",
+      "completion": "{\"answer\":\"B. Locate the art studio on the map\", \"reasoning\":\"There is no specific mention of the killer learning the location from Noguchi or following by sound or smell. The context suggests the killer had prior knowledge or used a map to find the location.\"}",
+      "score": 0.0,
+      "ttft_seconds": 0.1519310389999191,
+      "latency_seconds": 1.0585460540000895,
+      "metadata": {
+        "example_index": 6,
+        "question_index": 3,
+        "source": "detective_qa"
+      }
+    },
+    {
+      "request_id": "W2-ex7-q3",
+      "completion": "{\"answer\":\"B. Xichuan\", \"reasoning\":\"In the given context, it is mentioned that Xichuan often visited the home of Dr. Nishiyama Takaichi and watched Momiji grow up. Additionally, it is noted that Momiji frequently visits Xichuan's home after entering N",
+      "score": 0.0,
+      "ttft_seconds": 0.15416819699976259,
+      "latency_seconds": 1.156643867999719,
+      "metadata": {
+        "example_index": 7,
+        "question_index": 3,
+        "source": "detective_qa"
+      }
+    },
+    {
+      "request_id": "W2-ex0-q4",
+      "completion": "{\"answer\":\"A. Inheriting through a valid will\", \"reasoning\":\"From the context, Mrs. Brand became the sole survivor of her family due to her grandfather's death and the deaths of other family members. Her grandfather left his inheritance to her, suggesting a valid will was involved.\", \"Mrs. Brand",
+      "score": 0.0,
+      "ttft_seconds": 0.15053773199997522,
+      "latency_seconds": 1.1514216310001757,
+      "metadata": {
+        "example_index": 0,
+        "question_index": 4,
+        "source": "detective_qa"
+      }
+    },
+    {
+      "request_id": "W2-ex1-q4",
+      "completion": "{\"answer\":\"D\", \"reasoning\":\"The context does not provide explicit details about why the mistress decided to give a portion of the inheritance to Felicia. However, based on the options given and the typical narrative structure of such stories, it is reasonable to infer that the hostess, Miss Blacklock, might have",
+      "score": 0.0,
+      "ttft_seconds": 0.1736154479999641,
+      "latency_seconds": 1.1762697809999736,
+      "metadata": {
+        "example_index": 1,
+        "question_index": 4,
+        "source": "detective_qa"
+      }
+    },
+    {
+      "request_id": "W2-ex2-q4",
+      "completion": "{\"answer\":\"C. Anthony\", \"reasoning\":\"Anthony Ked is described as a tour guide who is always in trouble and has a knack for getting into adventures. His character traits and background suggest he might be involved in the mystery surrounding Prince Michael.\", \"Mr. Anthony Ked is known for his adventurous nature and",
+      "score": 0.0,
+      "ttft_seconds": 0.15562147899981937,
+      "latency_seconds": 1.158943939999972,
+      "metadata": {
+        "example_index": 2,
+        "question_index": 4,
+        "source": "detective_qa"
+      }
+    },
+    {
+      "request_id": "W2-ex3-q4",
+      "completion": "{\"answer\":\"D. The murderer had poison and administered it to Field when they met.\", \"reasoning\":\"Dr. Stuttgart confirmed that the victim did not die from gunshot, stabbing, or strangulation. The officer Quinn found a half-empty bottle of ginger ale under the victim's seat, and later questioned the boy who",
+      "score": 1.0,
+      "ttft_seconds": 0.15643059600006382,
+      "latency_seconds": 1.1600924049998866,
+      "metadata": {
+        "example_index": 3,
+        "question_index": 4,
+        "source": "detective_qa"
+      }
+    },
+    {
+      "request_id": "W2-ex4-q4",
+      "completion": "{\"answer\":\"C. The symbols in the envelope contain important information.\", \"reasoning\":\"In the story, the envelope contains a clue to a secret, which is described as important and worth millions. The symbols on the envelope are meant to protect the secret and guide someone to the truth, aligning with option C.\"",
+      "score": 1.0,
+      "ttft_seconds": 0.1509525520000352,
+      "latency_seconds": 1.1546733070003938,
+      "metadata": {
+        "example_index": 4,
+        "question_index": 4,
+        "source": "detective_qa"
+      }
+    },
+    {
+      "request_id": "W2-ex5-q4",
+      "completion": "{\"answer\":\"C. Mists Drawn\", \"reasoning\":\"While the context provided does not explicitly state the perpetrator, the question seems to follow a pattern from the given example where the perpetrator is deduced based on character traits and behaviors. Given the options and the need to choose one, 'Mists Drawn",
+      "score": 1.0,
+      "ttft_seconds": 0.14728720299990528,
+      "latency_seconds": 1.150584372999674,
+      "metadata": {
+        "example_index": 5,
+        "question_index": 4,
+        "source": "detective_qa"
+      }
+    },
+    {
+      "request_id": "W2-ex6-q4",
+      "completion": "{\"answer\":\"D. Hatakeyama Manabu\", \"reasoning\":\"There is no information provided in the given context about who killed Kenzo Nakamura. The options given do not correspond to any characters or individuals mentioned in the text. Therefore, based solely on the information provided, it is not possible to",
+      "score": 1.0,
+      "ttft_seconds": 0.15085722200001328,
+      "latency_seconds": 1.1533864899997752,
+      "metadata": {
+        "example_index": 6,
+        "question_index": 4,
+        "source": "detective_qa"
+      }
+    },
+    {
+      "request_id": "W2-ex7-q4",
+      "completion": "{\"answer\":\"C. Akagi Shiki\", \"reasoning\":\"Based on the context provided, Dr. Akagi Shiki is known for her involvement in a high-profile case where she was accused of killing her parents and later acquitted due to mental incapacity. Her mysterious nature and connection to significant events make her a",
+      "score": 1.0,
+      "ttft_seconds": 0.15007779999996274,
+      "latency_seconds": 1.1522995519999313,
+      "metadata": {
+        "example_index": 7,
+        "question_index": 4,
+        "source": "detective_qa"
+      }
+    },
+    {
+      "request_id": "W2-ex0-q5",
+      "completion": "{\"answer\":\"B. Miss Pema Khodro\", \"reasoning\":\"Miss Pemarcho's detailed alibi and her ability to perceive the clocks with her hands suggest she was telling the truth. Additionally, the inconsistencies in the other suspects' stories point to her as the killer.\"}",
+      "score": 0.0,
+      "ttft_seconds": 0.15063760100019863,
+      "latency_seconds": 1.1064313749998291,
+      "metadata": {
+        "example_index": 0,
+        "question_index": 5,
+        "source": "detective_qa"
+      }
+    },
+    {
+      "request_id": "W2-ex1-q5",
+      "completion": "{\"answer\":\"C. Dora mistakenly said that the light bulb was replaced.\", \"reasoning\":\"There is no information suggesting the light was damaged by a gunshot, a short circuit was caused by the murderer, or that the family frequently changes table lamps. Dora's statement about the lamp being changed the next day is",
+      "score": 0.0,
+      "ttft_seconds": 0.1684783000000607,
+      "latency_seconds": 1.1724658769999223,
+      "metadata": {
+        "example_index": 1,
+        "question_index": 5,
+        "source": "detective_qa"
+      }
+    },
+    {
+      "request_id": "W2-ex2-q5",
+      "completion": "{\"answer\":\"A. Mr. James McGregor\", \"reasoning\":\"Anthony Kiedis is introduced as Anthony Ked, the tour guide for the Jazzy High-End Tour Group. Later, he meets his friend Jimmy McGregor and discusses various matters. Jimmy McGregor is revealed to be the real identity of Anthony K",
+      "score": 0.0,
+      "ttft_seconds": 0.14921032099982767,
+      "latency_seconds": 1.1515401159999783,
+      "metadata": {
+        "example_index": 2,
+        "question_index": 5,
+        "source": "detective_qa"
+      }
+    },
+    {
+      "request_id": "W2-ex3-q5",
+      "completion": "{\"answer\":\"C. Quine wanted to use this method to find other potential suspects.\", \"reasoning\":\"Detective Quinn's actions suggest he is employing a tactic to uncover more information or suspects. Given the complexity of the case and the need to gather more evidence, making Michael write and send an extortion letter would serve",
+      "score": 0.0,
+      "ttft_seconds": 0.15183917700005622,
+      "latency_seconds": 1.1556512219999604,
+      "metadata": {
+        "example_index": 3,
+        "question_index": 5,
+        "source": "detective_qa"
+      }
+    },
+    {
+      "request_id": "W2-ex4-q5",
+      "completion": "{\"answer\":\"C. Hamnet Sedlak\", \"reasoning\":\"The symbol '3HS wM' corresponds to Hamnet Sedlak in the given context. While the direct association is not explicitly stated in the provided text, such symbols or codes often represent specific characters in narratives, especially in mystery or detective",
+      "score": 0.0,
+      "ttft_seconds": 0.15051167000001442,
+      "latency_seconds": 1.1524742999999944,
+      "metadata": {
+        "example_index": 4,
+        "question_index": 5,
+        "source": "detective_qa"
+      }
+    },
+    {
+      "request_id": "W2-ex5-q5",
+      "completion": "{\"answer\":\"A. Complete her aesthetics\", \"reasoning\":\"The misty planner's actions suggest a meticulous and artistic approach to the murders, indicating a focus on aesthetics rather than personal vendettas, legacy inheritance, or family unity.\"}",
+      "score": 1.0,
+      "ttft_seconds": 0.148163170999851,
+      "latency_seconds": 0.9259651550000854,
+      "metadata": {
+        "example_index": 5,
+        "question_index": 5,
+        "source": "detective_qa"
+      }
+    },
+    {
+      "request_id": "W2-ex6-q5",
+      "completion": "{\"answer\":\"A. Nao Tokoro himself\", \"reasoning\":\"The context does not provide specific details about who wrote the note found on the protagonist's pocket. However, given the options and typical narrative structures, it is most likely that the note was written by the protagonist himself, Nao Tokoro, as",
+      "score": 1.0,
+      "ttft_seconds": 0.1464445260003231,
+      "latency_seconds": 1.1273004200002106,
+      "metadata": {
+        "example_index": 6,
+        "question_index": 5,
+        "source": "detective_qa"
+      }
+    },
+    {
+      "request_id": "W2-ex7-q5",
+      "completion": "{\"answer\":\"D. Because of interest\", \"reasoning\":\"Trueharu's questions and interactions during the event suggest curiosity and a desire to understand human psychology and behavior, rather than seeking revenge, freedom, or indicating schizophrenia.\"}",
+      "score": 0.0,
+      "ttft_seconds": 0.14550919399971463,
+      "latency_seconds": 0.8781181759995889,
+      "metadata": {
+        "example_index": 7,
+        "question_index": 5,
+        "source": "detective_qa"
+      }
+    },
+    {
+      "request_id": "W2-ex2-q6",
+      "completion": "{\"answer\":\"A. Anthony\", \"reasoning\":\"Anthony is involved in schemes and seems to have knowledge of the Great Thief Victor's activities, suggesting he might be the imposter.\", \"Mr. Anthony Kidd discusses plans involving the Great Thief Victor, indicating his involvement in the mystery surrounding Victor.\"}",
+      "score": 0.0,
+      "ttft_seconds": 0.1485410939999383,
+      "latency_seconds": 1.0851738759997716,
+      "metadata": {
+        "example_index": 2,
+        "question_index": 6,
+        "source": "detective_qa"
+      }
+    },
+    {
+      "request_id": "W2-ex3-q6",
+      "completion": "{\"answer\":\"B. Probing the killer to see if they will return to the scene\", \"reasoning\":\"The Quinns, particularly Ellery Quinn, are actively investigating the crime scene and questioning witnesses. Their actions suggest they are trying to catch the killer if they return to the scene.\"}",
+      "score": 0.0,
+      "ttft_seconds": 0.14656029300022055,
+      "latency_seconds": 1.1055829870001617,
+      "metadata": {
+        "example_index": 3,
+        "question_index": 6,
+        "source": "detective_qa"
+      }
+    },
+    {
+      "request_id": "W2-ex4-q6",
+      "completion": "{\"answer\":\"C. Partial color blindness\", \"reasoning\":\"Dr. Aless has partial color blindness, as mentioned in the story where he struggles to distinguish between certain colors, particularly when examining the multicolored beard of Joseph.\"}",
+      "score": 0.0,
+      "ttft_seconds": 0.1490414699997018,
+      "latency_seconds": 0.8882831129999431,
+      "metadata": {
+        "example_index": 4,
+        "question_index": 6,
+        "source": "detective_qa"
+      }
+    },
+    {
+      "request_id": "W2-ex6-q6",
+      "completion": "{\"answer\":\"C. Omuta Koujiro\", \"reasoning\":\"In the context provided, Omuta Koujiro is the only character listed who could potentially be the killer of Yagami Ryukyu. The other options are not mentioned in relation to this specific event.\"}",
+      "score": 0.0,
+      "ttft_seconds": 0.14895392700009324,
+      "latency_seconds": 1.0971131010001045,
+      "metadata": {
+        "example_index": 6,
+        "question_index": 6,
+        "source": "detective_qa"
+      }
+    },
+    {
+      "request_id": "W2-ex2-q7",
+      "completion": "{\"answer\":\"A. The slain Prince Michael was actually an imposter, and Mrs. Rue might discover this, which could be detrimental to King Victor's plans.\", \"reasoning\":\"The context suggests that Victor King is a con artist and jewel thief, and that there are suspicions and rumors surrounding the death of Prince Michael",
+      "score": 0.0,
+      "ttft_seconds": 0.16927884000006088,
+      "latency_seconds": 1.165153944999929,
+      "metadata": {
+        "example_index": 2,
+        "question_index": 7,
+        "source": "detective_qa"
+      }
+    },
+    {
+      "request_id": "W2-ex3-q7",
+      "completion": "{\"answer\":\"B. Morgan\", \"reasoning\":\"While the passage does not explicitly state who the killer is, the narrative builds suspicion around Morgan. His nervous behavior, the fact that he was found with a high-top hat that didn't belong to him, and his attempt to leave the theater early suggest he is hiding",
+      "score": 0.0,
+      "ttft_seconds": 0.14911402200004886,
+      "latency_seconds": 1.1458418289998917,
+      "metadata": {
+        "example_index": 3,
+        "question_index": 7,
+        "source": "detective_qa"
+      }
+    },
+    {
+      "request_id": "W2-ex4-q7",
+      "completion": "{\"answer\":\"None of the options provided\", \"reasoning\":\"The passage does not specify who kidnapped Donohue. The story only mentions that Donohue disappeared and that his friend, George Fisher, was concerned about him and sought help from the detective agency. There is no mention of any individual from the given options",
+      "score": 0.0,
+      "ttft_seconds": 0.14816303900033745,
+      "latency_seconds": 1.1476251880003474,
+      "metadata": {
+        "example_index": 4,
+        "question_index": 7,
+        "source": "detective_qa"
+      }
+    },
+    {
+      "request_id": "W2-ex6-q7",
+      "completion": "{\"answer\":\"C. Has been sent from the post office to elsewhere, not in the mailbox.\", \"reasoning\":\"The context does not provide specific details about the contents of the envelopes or the actions of Suguraya, but it mentions that only one letter was found in the mailbox. Given this information, the most",
+      "score": 0.0,
+      "ttft_seconds": 0.15132859599998483,
+      "latency_seconds": 1.1506846490001408,
+      "metadata": {
+        "example_index": 6,
+        "question_index": 7,
+        "source": "detective_qa"
+      }
+    },
+    {
+      "request_id": "W2-ex4-q8",
+      "completion": "{\"answer\":\"C. Donohue\", \"reasoning\":\"Based on the story text, Donohue is a special guard at the British Museum who went missing and was later found to be related to the case involving the missing passengers and the strange events at the British Museum.\"}",
+      "score": 0.0,
+      "ttft_seconds": 0.118333523000274,
+      "latency_seconds": 1.0235891600000286,
+      "metadata": {
+        "example_index": 4,
+        "question_index": 8,
+        "source": "detective_qa"
+      }
+    },
+    {
+      "request_id": "W2-ex6-q8",
+      "completion": "{\"answer\":\"D. Jiang Shener Lang\", \"reasoning\":\"From the context provided, Jiang Shener Lang is mentioned as the one who brought the information about Matsuri's whereabouts to her parents. There's no direct mention of who killed Hachiko Fujimura, but given the options and the context,",
+      "score": 0.0,
+      "ttft_seconds": 0.11735120799994547,
+      "latency_seconds": 1.1190375129999666,
+      "metadata": {
+        "example_index": 6,
+        "question_index": 8,
+        "source": "detective_qa"
+      }
+    },
+    {
+      "request_id": "W2-ex4-q9",
+      "completion": "{\"answer\":\"C. Donohue\", \"reasoning\":\"Based on the story details provided, Donohue was described as a big, strong man with a good service record who recently retired from the police force and works as a special guard at the British Museum. His disappearance and subsequent involvement in the mystery suggest he",
+      "score": 0.0,
+      "ttft_seconds": 0.11318630999994639,
+      "latency_seconds": 1.1141112880000037,
+      "metadata": {
+        "example_index": 4,
+        "question_index": 9,
+        "source": "detective_qa"
+      }
+    }
+  ]
+}
