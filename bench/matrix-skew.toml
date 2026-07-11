@@ -1,0 +1,56 @@
+# Skewed re-access follow-up to the 33-cell matrix (2026-07-11). The core
+# matrix's round_robin issuance is uniform: every context revisited at the
+# same frequency, so a reuse-frequency policy has nothing to exploit, and
+# EVOKE (A2) tied or lost to stock LRU (A1). This 4-cell experiment is the
+# adjudicator: 2 hot contexts revisited every round while 6 cold contexts
+# scan through between revisits. The hot set (2 x 12k tokens x 57KB =
+# ~1.37 GiB) fits inside B2's 1.5 GiB only if the policy chooses to keep
+# it; each hot revisit arrives after ~4 distinct contexts (~2.7 GiB) have
+# flushed an LRU pool at either budget. If A2 does not beat A1 here, the
+# scoring policy has no demonstrated regime on this stack.
+
+[meta]
+trace_id = "verdant-session-2026-07-01"
+expected_core_runs = 4
+
+[[workloads]]
+id = "W1S"
+kind = "memory_agent_bench"
+track = "Accurate_Retrieval"
+sources = [
+    "eventqa_full",
+    "eventqa_65536",
+    "eventqa_131072",
+    "ruler_qa1_197K",
+    "ruler_qa2_421K",
+]
+scorer = "substring_exact_match"
+n_examples = 8
+seed = 42
+max_tokens = 64
+context_token_budget = 12000
+max_questions_per_example = 12
+tokenizer_id = "RedHatAI/Qwen2.5-7B-Instruct-FP8-dynamic"
+issue_order = "hot_cold"
+hot_examples = 2
+cold_questions_per_example = 6
+
+[[budgets]]
+id = "B1"
+cpu_bytes_to_use = 3221225472
+label = "mild 3 GiB, LRU-marginal: the scan just barely flushes hot"
+
+[[budgets]]
+id = "B2"
+cpu_bytes_to_use = 1610612736
+label = "moderate 1.5 GiB, holds the hot set only if the policy pins it"
+
+[[cells]]
+arm = "A1"
+workloads = ["W1S"]
+budgets = ["B1", "B2"]
+
+[[cells]]
+arm = "A2"
+workloads = ["W1S"]
+budgets = ["B1", "B2"]

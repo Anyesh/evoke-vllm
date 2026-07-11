@@ -1,0 +1,142 @@
+# Run matrix: 27 primary cells
+# (A0 x 3 workloads, A1/A2 x 3 workloads x 4 budgets) plus 6
+# composition-or-fallback cells (A3 x 3 workloads x 2 binding budgets),
+# 33 runs total. A3 is gated by [smoke_test]; if it fails, replace the A3
+# cell rule below with arm = "A4" (LMCache alone) for the side-by-side
+# fallback per 02a section 3.
+
+[meta]
+trace_id = "verdant-session-2026-07-01"
+expected_core_runs = 33
+
+[[workloads]]
+id = "W1"
+kind = "memory_agent_bench"
+# sources are the real metadata.source values in dataset revision
+# 7ea066982b140a19337e17e60d45d4076e042faf, verified against the pinned
+# revision directly: spec 02a-workloads.md names these "event_qa",
+# "ruler_qa1", "ruler_qa2", but the dataset itself tags them
+# eventqa_full/eventqa_65536/eventqa_131072 (three context-length variants
+# of the event_qa task) and ruler_qa1_197K/ruler_qa2_421K.
+track = "Accurate_Retrieval"
+sources = [
+    "eventqa_full",
+    "eventqa_65536",
+    "eventqa_131072",
+    "ruler_qa1_197K",
+    "ruler_qa2_421K",
+]
+scorer = "substring_exact_match"
+n_examples = 8
+seed = 42
+max_tokens = 64
+# The native contexts run 65k to 421k tokens (the source names above carry
+# the size), which cannot be served inside the profiles' 16384-token
+# max_model_len on a 16GB card. Contexts are therefore cut to this budget
+# with the served model's tokenizer, deterministically and identically for
+# every arm: absolute scores are not leaderboard-comparable, arm-relative
+# parity is the fidelity signal (spec 02a section 0). The question cap
+# bounds a cell's wall clock the same way section 5's example cap does
+# (uncapped, W1 alone issues 800 requests per cell).
+context_token_budget = 12000
+max_questions_per_example = 12
+tokenizer_id = "RedHatAI/Qwen2.5-7B-Instruct-FP8-dynamic"
+# Round-robin across examples so a context is revisited only after the
+# other 7 contexts (~84k tokens) have flowed through the ~17k-token GPU
+# pool. Example-major order never re-accesses an evicted context, which is
+# why the 2026-07-11 matrix logged 100k connector queries with 0 hits: no
+# revisit, no restore, at any GPU pressure. Same order for every arm.
+issue_order = "round_robin"
+
+[[workloads]]
+id = "W2"
+kind = "memory_agent_bench"
+track = "Long_Range_Understanding"
+# spec 02a-workloads.md names this "detectiveQA"; the real metadata.source
+# value in the pinned revision is "detective_qa" (10 of 110 rows in this
+# split, the rest are infbench_sum_eng_shots2, filtered out by this list).
+sources = ["detective_qa"]
+# The model answers detective_qa as JSON ({"answer": ..., "reasoning":
+# ...}, usually truncated at max_tokens); extract_answer pulls the answer
+# field before this scorer runs, matching upstream's parse-then-score
+# protocol. Scoring the raw completion can never exact-match (the whole
+# 2026-07-11 matrix scored W2 at 0.000).
+scorer = "exact_match"
+n_examples = 8
+seed = 42
+max_tokens = 64
+# Same 16384-token serving-window adaptation as W1 (native detective_qa
+# contexts measure 110k-216k tokens).
+context_token_budget = 12000
+max_questions_per_example = 12
+tokenizer_id = "RedHatAI/Qwen2.5-7B-Instruct-FP8-dynamic"
+# Same rationale as W1's issue_order.
+issue_order = "round_robin"
+
+[[workloads]]
+id = "W3"
+kind = "verdant_replay"
+# W3 replays a recorded agent session (private trace, not shipped with this
+# repo). Point trace_path at your own verdant session.jsonl or skip W3 cells.
+trace_path = "traces/session.jsonl"
+cas_root = ""
+max_tokens = 64
+temperature = 0.0
+# Reconstructed prompts in the real trace run from 3 tokens to 2.8M (p50
+# 3,788, p90 182k). Calls over this budget are dropped, not truncated:
+# truncation would rewrite the prefix lineage the replay exercises. A 14k
+# budget keeps 150 of 246 calls, the session's early-to-mid growth arc,
+# identically for every arm.
+prompt_token_budget = 14000
+tokenizer_id = "RedHatAI/Qwen2.5-7B-Instruct-FP8-dynamic"
+
+# Budgets are cpu_bytes_to_use for kv_connector_extra_config. W1's
+# round-robin working set is 8 truncated contexts x 12k tokens x 57KB/token
+# fp16 KV (02a section 5) = ~5.5 GiB, so the ladder runs from
+# holds-everything down to holds-one-context.
+[[budgets]]
+id = "B0"
+cpu_bytes_to_use = 8589934592
+label = "unconstrained 8 GiB, ~1.5x working set, holds all 8 contexts, control"
+
+[[budgets]]
+id = "B1"
+cpu_bytes_to_use = 3221225472
+label = "mild 3 GiB, ~0.55x, holds ~4 contexts"
+
+[[budgets]]
+id = "B2"
+cpu_bytes_to_use = 1610612736
+label = "moderate 1.5 GiB, ~0.27x, holds ~2 contexts, binds"
+
+[[budgets]]
+id = "B3"
+cpu_bytes_to_use = 805306368
+label = "heavy 0.75 GiB, ~0.14x, holds ~1 context, binds hard"
+
+[[cells]]
+arm = "A0"
+workloads = ["W1", "W2", "W3"]
+budgets = ["NA"]
+
+[[cells]]
+arm = "A1"
+workloads = ["W1", "W2", "W3"]
+budgets = ["B0", "B1", "B2", "B3"]
+
+[[cells]]
+arm = "A2"
+workloads = ["W1", "W2", "W3"]
+budgets = ["B0", "B1", "B2", "B3"]
+
+[[cells]]
+arm = "A3"
+workloads = ["W1", "W2", "W3"]
+budgets = ["B2", "B3"]
+fallback_arm = "A4"
+
+[smoke_test]
+arm = "A3"
+workload = "W1"
+budget = "B2"
+note = "one short AR example on A3; must pass before the A3 composition rows run (spec 02a section 3). On failure, edit the A3 cell above to arm = \"A4\" and rerun --dry-run."

@@ -1,0 +1,24 @@
+# HELP vllm:prefix_cache_queries Prefix cache queries, in terms of number of queried tokens.
+# TYPE vllm:prefix_cache_queries counter
+vllm:prefix_cache_queries{model_name="Qwen/Qwen2.5-1.5B-Instruct"} 9000.0
+
+# HELP vllm:prefix_cache_hits Prefix cache hits, in terms of number of cached tokens.
+# TYPE vllm:prefix_cache_hits counter
+vllm:prefix_cache_hits{model_name="Qwen/Qwen2.5-1.5B-Instruct"} 9000.0
+
+# HELP vllm:external_prefix_cache_queries External prefix cache queries from KV connector cross-instance cache sharing, in terms of number of queried tokens.
+# TYPE vllm:external_prefix_cache_queries counter
+vllm:external_prefix_cache_queries{model_name="Qwen/Qwen2.5-1.5B-Instruct"} 0.0
+
+# HELP vllm:external_prefix_cache_hits External prefix cache hits from KV connector cross-instance cache sharing, in terms of number of cached tokens.
+# TYPE vllm:external_prefix_cache_hits counter
+vllm:external_prefix_cache_hits{model_name="Qwen/Qwen2.5-1.5B-Instruct"} 0.0
+
+# HELP vllm:kv_offload_total_bytes Number of bytes offloaded by KV connector
+# TYPE vllm:kv_offload_total_bytes counter
+vllm:kv_offload_total_bytes{model_name="Qwen/Qwen2.5-1.5B-Instruct",transfer_type="CPU_to_GPU"} 0.0
+vllm:kv_offload_total_bytes{model_name="Qwen/Qwen2.5-1.5B-Instruct",transfer_type="GPU_to_CPU"} 0.0
+
+# HELP vllm:kv_cache_usage_perc KV-cache usage. 1 means 100 percent usage.
+# TYPE vllm:kv_cache_usage_perc gauge
+vllm:kv_cache_usage_perc{model_name="Qwen/Qwen2.5-1.5B-Instruct"} 0.05

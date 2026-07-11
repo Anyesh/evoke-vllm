@@ -1,0 +1,26 @@
+[
+  {
+    "context": "Document 1: The sky is blue because of Rayleigh scattering.",
+    "questions": ["Why is the sky blue?", "What scattering effect causes it?"],
+    "answers": [["Rayleigh scattering", "rayleigh scattering"], ["Rayleigh", "Rayleigh scattering"]],
+    "metadata": {"source": "ruler_qa1"}
+  },
+  {
+    "context": "Document 2: The capital of France is Paris, a city on the Seine.",
+    "questions": ["What is the capital of France?"],
+    "answers": [["Paris", "paris, france"]],
+    "metadata": {"source": "event_qa"}
+  },
+  {
+    "context": "Document 3: Detective Holmes solved the case using deductive reasoning.",
+    "questions": ["Who solved the case?", "What method did they use?"],
+    "answers": [["Holmes", "Detective Holmes"], ["deductive reasoning"]],
+    "metadata": {"source": "detectiveQA"}
+  },
+  {
+    "context": "Document 4: unrelated track, must be filtered out.",
+    "questions": ["irrelevant question"],
+    "answers": [["irrelevant"]],
+    "metadata": {"source": "conflict_resolution"}
+  }
+]

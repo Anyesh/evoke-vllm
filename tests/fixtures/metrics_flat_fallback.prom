@@ -1,0 +1,24 @@
+# Simulates a future vLLM release that has removed the deprecated
+# vllm:kv_offload_total_bytes{transfer_type=...} counter in favor of the
+# flat, direction-in-the-name metrics. summarize_offload_metrics must fall
+# back to these when the deprecated metric is absent from the scrape.
+
+# HELP vllm:external_prefix_cache_queries External prefix cache queries.
+# TYPE vllm:external_prefix_cache_queries counter
+vllm:external_prefix_cache_queries{model_name="m"} 200.0
+
+# HELP vllm:external_prefix_cache_hits External prefix cache hits.
+# TYPE vllm:external_prefix_cache_hits counter
+vllm:external_prefix_cache_hits{model_name="m"} 150.0
+
+# HELP vllm:kv_offload_load_bytes Total bytes loaded from offload storage to GPU.
+# TYPE vllm:kv_offload_load_bytes counter
+vllm:kv_offload_load_bytes{model_name="m"} 2048.0
+
+# HELP vllm:kv_offload_store_bytes Total bytes stored from GPU to offload storage.
+# TYPE vllm:kv_offload_store_bytes counter
+vllm:kv_offload_store_bytes{model_name="m"} 4096.0
+
+# HELP vllm:kv_cache_usage_perc KV-cache usage.
+# TYPE vllm:kv_cache_usage_perc gauge
+vllm:kv_cache_usage_perc{model_name="m"} 0.5

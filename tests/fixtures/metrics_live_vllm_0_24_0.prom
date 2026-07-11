@@ -1,0 +1,35 @@
+# HELP vllm:kv_offload_total_bytes_total Number of bytes offloaded by KV connector
+# TYPE vllm:kv_offload_total_bytes_total counter
+vllm:kv_offload_total_bytes_total{engine="0",model_name="qwen2.5-1.5b-instruct",transfer_type="CPU_to_GPU"} 3.5323904e+07
+vllm:kv_offload_total_bytes_total{engine="0",model_name="qwen2.5-1.5b-instruct",transfer_type="GPU_to_CPU"} 4.0370176e+07
+# HELP vllm:kv_offload_total_bytes_created Number of bytes offloaded by KV connector
+# TYPE vllm:kv_offload_total_bytes_created gauge
+vllm:kv_offload_total_bytes_created{engine="0",model_name="qwen2.5-1.5b-instruct",transfer_type="CPU_to_GPU"} 1.78374354047976e+09
+vllm:kv_offload_total_bytes_created{engine="0",model_name="qwen2.5-1.5b-instruct",transfer_type="GPU_to_CPU"} 1.7837435404798262e+09
+# HELP vllm:kv_offload_load_bytes_total Total bytes loaded from offload storage to GPU.
+# TYPE vllm:kv_offload_load_bytes_total counter
+vllm:kv_offload_load_bytes_total{engine="0",model_name="qwen2.5-1.5b-instruct"} 3.5323904e+07
+# HELP vllm:kv_offload_load_bytes_created Total bytes loaded from offload storage to GPU.
+# TYPE vllm:kv_offload_load_bytes_created gauge
+vllm:kv_offload_load_bytes_created{engine="0",model_name="qwen2.5-1.5b-instruct"} 1.783743605829636e+09
+# HELP vllm:kv_offload_store_bytes_total Total bytes stored from GPU to offload storage.
+# TYPE vllm:kv_offload_store_bytes_total counter
+vllm:kv_offload_store_bytes_total{engine="0",model_name="qwen2.5-1.5b-instruct"} 4.0370176e+07
+# HELP vllm:kv_offload_store_bytes_created Total bytes stored from GPU to offload storage.
+# TYPE vllm:kv_offload_store_bytes_created gauge
+vllm:kv_offload_store_bytes_created{engine="0",model_name="qwen2.5-1.5b-instruct"} 1.783743575375809e+09
+# HELP vllm:kv_cache_usage_perc KV-cache usage. 1 means 100 percent usage.
+# TYPE vllm:kv_cache_usage_perc gauge
+vllm:kv_cache_usage_perc{engine="0",model_name="qwen2.5-1.5b-instruct"} 0.0
+# HELP vllm:external_prefix_cache_queries_total External prefix cache queries from KV connector cross-instance cache sharing, in terms of number of queried tokens.
+# TYPE vllm:external_prefix_cache_queries_total counter
+vllm:external_prefix_cache_queries_total{engine="0",model_name="qwen2.5-1.5b-instruct"} 70106.0
+# HELP vllm:external_prefix_cache_queries_created External prefix cache queries from KV connector cross-instance cache sharing, in terms of number of queried tokens.
+# TYPE vllm:external_prefix_cache_queries_created gauge
+vllm:external_prefix_cache_queries_created{engine="0",model_name="qwen2.5-1.5b-instruct"} 1.7837435404806948e+09
+# HELP vllm:external_prefix_cache_hits_total External prefix cache hits from KV connector cross-instance cache sharing, in terms of number of cached tokens.
+# TYPE vllm:external_prefix_cache_hits_total counter
+vllm:external_prefix_cache_hits_total{engine="0",model_name="qwen2.5-1.5b-instruct"} 1232.0
+# HELP vllm:external_prefix_cache_hits_created External prefix cache hits from KV connector cross-instance cache sharing, in terms of number of cached tokens.
+# TYPE vllm:external_prefix_cache_hits_created gauge
+vllm:external_prefix_cache_hits_created{engine="0",model_name="qwen2.5-1.5b-instruct"} 1.7837435404807122e+09

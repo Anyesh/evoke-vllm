@@ -1,0 +1,15 @@
+__pycache__/
+*.pyc
+.venv/
+.pytest_cache/
+.ruff_cache/
+*.egg-info/
+dist/
+build/
+uv.lock.tmp
+scripts/results/
+results/
+bench/results-*/
+wsl2-sitting-results.tar.gz
+.scope.md
+docs/wsl2-sitting.md
