@@ -20,3 +20,7 @@ an in-process llama.cpp engine. See `README_GATES.md` for exact usage.
 Both scripts have a `--dry-run` mode that needs no server and no GPU; see
 `tests/test_gate_lib.py` and `tests/test_serve_script.py` for the offline
 unit-test lane covering them.
+
+`results-published/` holds the raw recordings and verdict JSONs from the
+validated 2026-07-11 runs on both profiles; `README_GATES.md` documents
+how to re-derive the verdicts from them offline.

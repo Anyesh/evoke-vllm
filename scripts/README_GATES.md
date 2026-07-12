@@ -8,9 +8,44 @@ have actually happened (not a vacuous pass).
 The `local-2060` profile passed this gate on the real RTX 2060 on
 2026-07-11: 70/70 requests matched the baseline exactly, passkey recall
 10/10 on both arms, 1,232 external prefix cache hits, 40.4 MB offloaded and
-35.3 MB restored. The workload flags and profile values below are the
-validated ones from that run. The `wsl2-4070ti` profile remains dry-run
-validated only; treat its values as starting points.
+35.3 MB restored. The `wsl2-4070ti` profile ran the same day on the real
+4070 Ti SUPER; its FP8 result (9/80 diverged vs 16/80 for the stock
+recompute control) is interpreted in its own section below. The workload
+flags and profile values in both sections are the validated ones from
+those runs.
+
+## Published gate artifacts
+
+The raw recordings and verdict JSONs from the 2026-07-11 runs are checked
+in under `scripts/results-published/`: `local-baseline.json` /
+`local-evoke.json` and `wsl2-baseline.json` / `wsl2-evoke.json` /
+`wsl2-control.json` are the full per-request recordings (tokens,
+top-logprobs, offload metric deltas), and `local-fidelity-result.json` /
+`wsl2-fidelity-result.json` / `wsl2-control-result.json` are the verdicts
+computed from them. Every number quoted in this file and in the top-level
+README comes from these files. The verdicts are re-derivable offline, no
+GPU or server needed:
+
+```bash
+uv run python scripts/fidelity_gate.py compare \
+    --baseline scripts/results-published/local-baseline.json \
+    --evoke scripts/results-published/local-evoke.json \
+    --out /tmp/local-check.json          # exit 0, 70/70, non-vacuous
+uv run python scripts/fidelity_gate.py compare \
+    --baseline scripts/results-published/wsl2-baseline.json \
+    --evoke scripts/results-published/wsl2-evoke.json \
+    --out /tmp/wsl2-check.json           # exit 1, 9/80 diverged
+uv run python scripts/fidelity_gate.py compare \
+    --baseline scripts/results-published/wsl2-baseline.json \
+    --evoke scripts/results-published/wsl2-control.json \
+    --out /tmp/control-check.json        # exit 1, 16/80 diverged, vacuous as expected
+```
+
+Apart from the timestamp and record-path fields, the recomputed verdicts
+match the checked-in result files exactly (verified before publishing).
+The `baseline_record` / `evoke_record` paths inside the result files point
+at `scripts/results/`, the gitignored working directory the originals were
+recorded into.
 
 ## What the gate checks
 

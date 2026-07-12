@@ -116,7 +116,11 @@ decode like never-evicted ones. On Qwen2.5-1.5B (RTX 2060 6GB) it passes
 SUPER 16GB), continuations through restored blocks diverged from a pinned
 greedy baseline on 9 of 80 probes while stock recompute diverged on 16 of
 80 of its own, with 10 of 10 passkey retrievals through restored content:
-restoring saved bytes is more deterministic than recomputing them.
+restoring saved bytes is more deterministic than recomputing them. The
+recordings and verdicts behind these numbers are checked in under
+`scripts/results-published/`, and the verdicts re-derive offline with
+`fidelity_gate.py compare` (see "Published gate artifacts" in
+`scripts/README_GATES.md`).
 
 The benchmark matrix (`bench/README.md`, same 7B setup) compares stock
 vLLM, the stock LRU offload policy, this policy, and composition with

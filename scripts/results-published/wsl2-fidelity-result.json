@@ -1,0 +1,109 @@
+{
+  "generated_at": "2026-07-11T05:42:26.730789+00:00",
+  "baseline_record": "scripts/results/wsl2-baseline.json",
+  "evoke_record": "scripts/results/wsl2-evoke.json",
+  "workload": {
+    "session_count": 10,
+    "growth_turns": 7,
+    "filler_words_per_turn": 450,
+    "seed": 20260711,
+    "max_tokens": 32,
+    "top_logprobs": 5,
+    "model": "qwen2.5-7b-instruct-fp8"
+  },
+  "vacuous_check": {
+    "external_prefix_cache_hits_delta": 136096.0,
+    "external_prefix_cache_queries_delta": 178414.0,
+    "cpu_to_gpu_bytes_delta": 7804289024.0,
+    "gpu_to_cpu_bytes_delta": 2304770048.0,
+    "vacuous": false
+  },
+  "fidelity": {
+    "total_requests": 80,
+    "failed": 9,
+    "passed": 71,
+    "failures": [
+      {
+        "session_id": "session-0",
+        "turn_index": 7,
+        "phase": "replay",
+        "reason": "token mismatch: baseline=[' The', ' reference', ' code', ' for', ' this', ' session', ' is', ' ', '6', '6', '3', '5', '2', '2', '.', ' This', ' session', ' covers', ' a', ' comprehensive', ' review', ' of', ' various', ' project', ' management', ' and', ' technical', ' operations', ' tasks', ' including', ' audits', ','] evoke=[' The', ' reference', ' code', ' for', ' this', ' session', ' is', ' ', '6', '6', '3', '5', '2', '2', '.', ' This', ' session', ' covers', ' a', ' comprehensive', ' review', ' of', ' various', ' project', ' management', ' and', ' technical', ' operations', ' activities', ' including', ' audits', ',']"
+      },
+      {
+        "session_id": "session-1",
+        "turn_index": 7,
+        "phase": "replay",
+        "reason": "token mismatch: baseline=[' The', ' reference', ' code', ' for', ' this', ' session', ' is', ' ', '2', '0', '7', '5', '8', '6', '.', ' This', ' session', ' covers', ' a', ' wide', ' range', ' of', ' tasks', ' and', ' issues', ' related', ' to', ' project', ' management', ',', ' including', ' compliance'] evoke=[' The', ' reference', ' code', ' for', ' this', ' session', ' is', ' ', '2', '0', '7', '5', '8', '6', '.', ' This', ' session', ' covers', ' a', ' comprehensive', ' project', ' involving', ' multiple', ' aspects', ' of', ' compliance', ',', ' migration', ',', ' on', 'boarding', ',']"
+      },
+      {
+        "session_id": "session-2",
+        "turn_index": 7,
+        "phase": "replay",
+        "reason": "token mismatch: baseline=[' The', ' session', \"'s\", ' reference', ' code', ' is', ' ', '9', '1', '7', '4', '6', '2', '.', ' This', ' session', ' covers', ' a', ' wide', ' range', ' of', ' tasks', ' and', ' dependencies', ' related', ' to', ' project', ' management', ',', ' including', ' migrations', ','] evoke=[' The', ' session', \"'s\", ' reference', ' code', ' is', ' ', '9', '1', '7', '4', '6', '2', '.', ' This', ' session', ' covers', ' a', ' wide', ' range', ' of', ' project', ' management', ' and', ' technical', ' tasks', ' including', ' migrations', ',', ' roll', 'outs', ',']"
+      },
+      {
+        "session_id": "session-4",
+        "turn_index": 7,
+        "phase": "replay",
+        "reason": "token mismatch: baseline=[' The', ' reference', ' code', ' for', ' this', ' session', ' is', ' ', '3', '8', '5', '5', '8', '6', '.', ' This', ' session', ' covers', ' a', ' comprehensive', ' array', ' of', ' tasks', ' and', ' issues', ' related', ' to', ' project', ' management', ',', ' including', ' compliance'] evoke=[' The', ' reference', ' code', ' for', ' this', ' session', ' is', ' ', '3', '8', '5', '5', '8', '6', '.', ' This', ' session', ' covers', ' a', ' complex', ' project', ' with', ' multiple', ' components', ' including', ' compliance', ',', ' latency', ',', ' provisioning', ',', ' rollback']"
+      },
+      {
+        "session_id": "session-5",
+        "turn_index": 7,
+        "phase": "replay",
+        "reason": "token mismatch: baseline=[' The', ' session', \"'s\", ' reference', ' code', ' is', ' ', '4', '9', '7', '3', '1', '5', '.', ' This', ' session', ' covers', ' a', ' comprehensive', ' review', ' of', ' various', ' project', ' management', ' and', ' technical', ' issues', ' including', ' provisioning', ',', ' migration', ','] evoke=[' The', ' reference', ' code', ' for', ' this', ' session', ' is', ' ', '4', '9', '7', '3', '1', '5', '.', ' This', ' session', ' covers', ' a', ' complex', ' project', ' with', ' multiple', ' issues', ' including', ' dependency', ' management', ',', ' quota', ' limitations', ',', ' latency']"
+      },
+      {
+        "session_id": "session-6",
+        "turn_index": 7,
+        "phase": "replay",
+        "reason": "logprob mismatch at position 1: baseline=-0.3132668733596802 evoke=-0.6931626796722412 (atol=0.05)"
+      },
+      {
+        "session_id": "session-7",
+        "turn_index": 7,
+        "phase": "replay",
+        "reason": "logprob mismatch at position 1: baseline=-0.3132655620574951 evoke=-0.20141878724098206 (atol=0.05)"
+      },
+      {
+        "session_id": "session-8",
+        "turn_index": 7,
+        "phase": "replay",
+        "reason": "token mismatch: baseline=[' The', ' session', \"'s\", ' reference', ' code', ' is', ' ', '9', '5', '8', '2', '2', '3', '.', ' This', ' session', ' covers', ' a', ' comprehensive', ' review', ' of', ' various', ' aspects', ' including', ' migrations', ',', ' roll', 'outs', ',', ' and', ' dependencies', ' across'] evoke=[' The', ' session', \"'s\", ' reference', ' code', ' is', ' ', '9', '5', '8', '2', '2', '3', '.', ' This', ' session', ' covers', ' a', ' comprehensive', ' review', ' of', ' various', ' aspects', ' including', ' migrations', ',', ' roll', 'outs', ',', ' on', 'boarding', ',']"
+      },
+      {
+        "session_id": "session-9",
+        "turn_index": 7,
+        "phase": "replay",
+        "reason": "token mismatch: baseline=[' The', ' session', \"'s\", ' reference', ' code', ' is', ' ', '7', '1', '6', '9', '7', '8', '.', ' This', ' session', ' covers', ' a', ' comprehensive', ' review', ' of', ' various', ' project', ' management', ' tasks', ' including', ' migrations', ',', ' roll', 'outs', ',', ' post'] evoke=[' The', ' session', \"'s\", ' reference', ' code', ' is', ' ', '7', '1', '6', '9', '7', '8', '.', ' This', ' session', ' covers', ' a', ' comprehensive', ' review', ' of', ' various', ' project', ' management', ' tasks', ' and', ' technical', ' issues', ' related', ' to', ' migrations', ',']"
+      }
+    ]
+  },
+  "passkey_recall": {
+    "baseline": {
+      "session-0": true,
+      "session-1": true,
+      "session-2": true,
+      "session-3": true,
+      "session-4": true,
+      "session-5": true,
+      "session-6": true,
+      "session-7": true,
+      "session-8": true,
+      "session-9": true
+    },
+    "evoke": {
+      "session-0": true,
+      "session-1": true,
+      "session-2": true,
+      "session-3": true,
+      "session-4": true,
+      "session-5": true,
+      "session-6": true,
+      "session-7": true,
+      "session-8": true,
+      "session-9": true
+    }
+  },
+  "verdict": "FAIL"
+}

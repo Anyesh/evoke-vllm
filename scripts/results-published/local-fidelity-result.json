@@ -1,0 +1,54 @@
+{
+  "generated_at": "2026-07-11T04:26:38.399171+00:00",
+  "baseline_record": "scripts/results/local-baseline.json",
+  "evoke_record": "scripts/results/local-evoke.json",
+  "workload": {
+    "session_count": 10,
+    "growth_turns": 6,
+    "filler_words_per_turn": 220,
+    "seed": 20260711,
+    "max_tokens": 32,
+    "top_logprobs": 5,
+    "model": "qwen2.5-1.5b-instruct"
+  },
+  "vacuous_check": {
+    "external_prefix_cache_hits_delta": 1232.0,
+    "external_prefix_cache_queries_delta": 70106.0,
+    "cpu_to_gpu_bytes_delta": 35323904.0,
+    "gpu_to_cpu_bytes_delta": 40370176.0,
+    "vacuous": false
+  },
+  "fidelity": {
+    "total_requests": 70,
+    "failed": 0,
+    "passed": 70,
+    "failures": []
+  },
+  "passkey_recall": {
+    "baseline": {
+      "session-0": true,
+      "session-1": true,
+      "session-2": true,
+      "session-3": true,
+      "session-4": true,
+      "session-5": true,
+      "session-6": true,
+      "session-7": true,
+      "session-8": true,
+      "session-9": true
+    },
+    "evoke": {
+      "session-0": true,
+      "session-1": true,
+      "session-2": true,
+      "session-3": true,
+      "session-4": true,
+      "session-5": true,
+      "session-6": true,
+      "session-7": true,
+      "session-8": true,
+      "session-9": true
+    }
+  },
+  "verdict": "PASS"
+}
