@@ -140,7 +140,7 @@ request, while its offload counters remain zero.
 
 Qwen2.5-7B-Instruct, FP8 weights
 (`RedHatAI/Qwen2.5-7B-Instruct-FP8-dynamic`, apache-2.0, verified on
-huggingface.co) with fp16 KV cache, per spec `02a-workloads.md` section 5.
+huggingface.co) with fp16 KV cache.
 See `profiles/wsl2-4070ti.env` for the full knob list.
 
 ### One-time WSL2 + CUDA setup (on the Windows box)
@@ -308,12 +308,11 @@ never leak into the sums. The fixtures
 `tests/bench_fixtures/metrics_live_before.prom` / `metrics_live_after.prom`
 are verbatim scrapes from the real 2060 server and pin the served names.
 
-**Label casing.** Spec `02a-workloads.md` refers to
-`kv_offload_total_bytes{transfer_type="cpu_to_gpu"}`. The vLLM 0.24.0
+**Label casing.** The vLLM 0.24.0
 actually installed in this project's `.venv`
 (`vllm/distributed/kv_transfer/kv_connector/v1/offloading/metrics.py`)
-emits that label as `"CPU_to_GPU"` / `"GPU_to_CPU"` (mixed case), not
-lowercase. `scripts/gate_lib.summarize_offload_metrics` matches
+emits `kv_offload_total_bytes`'s `transfer_type` label as `"CPU_to_GPU"` /
+`"GPU_to_CPU"` (mixed case), not lowercase. `scripts/gate_lib.summarize_offload_metrics` matches
 `transfer_type` case-insensitively for exactly this reason; see the fixture
 `tests/fixtures/metrics_healthy.prom`, which uses the real mixed-case
 labels, and `tests/fixtures/metrics_flat_fallback.prom`, which exercises

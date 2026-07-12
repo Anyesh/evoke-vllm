@@ -3,7 +3,7 @@
 # composition-or-fallback cells (A3 x 3 workloads x 2 binding budgets),
 # 33 runs total. A3 is gated by [smoke_test]; if it fails, replace the A3
 # cell rule below with arm = "A4" (LMCache alone) for the side-by-side
-# fallback per 02a section 3.
+# fallback.
 
 [meta]
 trace_id = "verdant-session-2026-07-01"
@@ -14,7 +14,7 @@ id = "W1"
 kind = "memory_agent_bench"
 # sources are the real metadata.source values in dataset revision
 # 7ea066982b140a19337e17e60d45d4076e042faf, verified against the pinned
-# revision directly: spec 02a-workloads.md names these "event_qa",
+# revision directly: upstream names these tasks "event_qa",
 # "ruler_qa1", "ruler_qa2", but the dataset itself tags them
 # eventqa_full/eventqa_65536/eventqa_131072 (three context-length variants
 # of the event_qa task) and ruler_qa1_197K/ruler_qa2_421K.
@@ -35,9 +35,8 @@ max_tokens = 64
 # max_model_len on a 16GB card. Contexts are therefore cut to this budget
 # with the served model's tokenizer, deterministically and identically for
 # every arm: absolute scores are not leaderboard-comparable, arm-relative
-# parity is the fidelity signal (spec 02a section 0). The question cap
-# bounds a cell's wall clock the same way section 5's example cap does
-# (uncapped, W1 alone issues 800 requests per cell).
+# parity is the fidelity signal. The question cap bounds a cell's wall
+# clock (uncapped, W1 alone issues 800 requests per cell).
 context_token_budget = 12000
 max_questions_per_example = 12
 tokenizer_id = "RedHatAI/Qwen2.5-7B-Instruct-FP8-dynamic"
@@ -52,7 +51,7 @@ issue_order = "round_robin"
 id = "W2"
 kind = "memory_agent_bench"
 track = "Long_Range_Understanding"
-# spec 02a-workloads.md names this "detectiveQA"; the real metadata.source
+# upstream names this task "detectiveQA"; the real metadata.source
 # value in the pinned revision is "detective_qa" (10 of 110 rows in this
 # split, the rest are infbench_sum_eng_shots2, filtered out by this list).
 sources = ["detective_qa"]
@@ -92,7 +91,7 @@ tokenizer_id = "RedHatAI/Qwen2.5-7B-Instruct-FP8-dynamic"
 
 # Budgets are cpu_bytes_to_use for kv_connector_extra_config. W1's
 # round-robin working set is 8 truncated contexts x 12k tokens x 57KB/token
-# fp16 KV (02a section 5) = ~5.5 GiB, so the ladder runs from
+# fp16 KV = ~5.5 GiB, so the ladder runs from
 # holds-everything down to holds-one-context.
 [[budgets]]
 id = "B0"
@@ -139,4 +138,4 @@ fallback_arm = "A4"
 arm = "A3"
 workload = "W1"
 budget = "B2"
-note = "one short AR example on A3; must pass before the A3 composition rows run (spec 02a section 3). On failure, edit the A3 cell above to arm = \"A4\" and rerun --dry-run."
+note = "one short AR example on A3; must pass before the A3 composition rows run. On failure, edit the A3 cell above to arm = \"A4\" and rerun --dry-run."

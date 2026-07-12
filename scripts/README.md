@@ -1,6 +1,6 @@
 # scripts
 
-GPU correctness gates from design spec 01a section 5: a human-run
+GPU correctness gates: a human-run
 serve-and-measure pass that checks offload-then-restore fidelity, adapted
 from EVOKE's `verify_kv_restore.py` and
 `verify_kv_fidelity*.py` to vLLM's OpenAI-compatible HTTP server instead of

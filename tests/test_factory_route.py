@@ -7,8 +7,8 @@ tests build them (``tests/v1/kv_connector/unit/offloading_connector/utils.py``
 in the vLLM source tree). ``EvokeOffloadingSpec`` and ``EvokeOffloadingManager``
 are never imported and constructed directly for the assertions below; the
 factory resolves both through ``spec_name`` / ``spec_module_path`` in
-``kv_connector_extra_config``, the route design spec 01a section 5 documents
-(the same one vllm-ascend uses for ``NPUOffloadingSpec``).
+``kv_connector_extra_config``, the same route vllm-ascend uses for
+``NPUOffloadingSpec``.
 
 Boundary: ``VllmConfig.model_config`` is left at its documented ``None``
 default. The field's docstring in ``vllm.config.vllm.VllmConfig`` carries a

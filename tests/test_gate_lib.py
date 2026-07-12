@@ -211,9 +211,8 @@ def test_summarize_offload_metrics_healthy_fixture_is_not_vacuous():
 
 
 def test_summarize_offload_metrics_matches_transfer_type_case_insensitively():
-    # vllm==0.24.0 emits "CPU_to_GPU"/"GPU_to_CPU", not the lowercase
-    # "cpu_to_gpu" spelling used in spec 02a's prose; the fixture uses the
-    # real mixed-case labels vLLM actually emits.
+    # vllm==0.24.0 emits "CPU_to_GPU"/"GPU_to_CPU", not lowercase; the
+    # fixture uses the real mixed-case labels vLLM actually emits.
     text = (FIXTURES / "metrics_healthy.prom").read_text()
     assert 'transfer_type="CPU_to_GPU"' in text
     summary = summarize_offload_metrics(text)

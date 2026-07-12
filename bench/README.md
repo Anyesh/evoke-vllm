@@ -74,8 +74,8 @@ dry-run output is the copy-paste script for that box.
 ## The A3 smoke test
 
 `matrix.toml`'s `[smoke_test]` table names a single short cell (A3 on W1 at
-budget B2) that must pass before the six A3 composition rows run, per
-spec 02a-workloads.md section 3. If it fails (cross-layer breakage, LMCache
+budget B2) that must pass before the six A3 composition rows run.
+If it fails (cross-layer breakage, LMCache
 layout or install friction), edit the `A3` `[[cells]]` entry in
 `matrix.toml` to `arm = "A4"` (LMCache alone) for the documented
 side-by-side fallback, and rerun `--dry-run` to get the updated plan.
