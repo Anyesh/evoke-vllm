@@ -1,7 +1,7 @@
 import json
 from pathlib import Path
 
-from bench.report import render_report
+from bench.report import load_hot_examples, render_report
 
 
 def _cell(arm, workload, budget, **metrics):
@@ -74,3 +74,40 @@ def test_report_marks_absent_metrics_and_sorts_stock_first(tmp_path):
     assert lines[0].startswith("| A0 ")
     assert " - " in lines[0]
     assert "7.6%" in lines[1]
+
+
+def _hot_col(row: str) -> str:
+    cols = [c.strip() for c in row.strip().strip("|").split("|")]
+    return cols[7]
+
+
+def test_report_renders_hot_request_ttft_mean_for_skewed_workloads(tmp_path):
+    # The README's headline hot-request TTFT must be readable off the
+    # rendered report, not re-derived by hand from the raw request records.
+    cell = _cell("A2", "W1S", "B1", restore_hit_rate=0.58)
+    cell["requests"] = [
+        {"ttft_seconds": 0.2, "metadata": {"example_index": 0}},
+        {"ttft_seconds": 0.6, "metadata": {"example_index": 1}},
+        {"ttft_seconds": 2.0, "metadata": {"example_index": 5}},
+    ]
+    _write(tmp_path, cell)
+    report = render_report(tmp_path, hot_examples={"W1S": 2})
+
+    assert "ttft hot mean s" in report
+    a2_row = next(line for line in report.splitlines() if "| A2 " in line)
+    assert _hot_col(a2_row) == "0.400"
+
+
+def test_report_marks_hot_ttft_absent_without_a_hot_split(tmp_path):
+    cell = _cell("A2", "W1", "B1", restore_hit_rate=0.076)
+    cell["requests"] = [{"ttft_seconds": 0.5, "metadata": {"example_index": 0}}]
+    _write(tmp_path, cell)
+    report = render_report(tmp_path, hot_examples={"W1S": 2})
+
+    a2_row = next(line for line in report.splitlines() if "| A2 " in line)
+    assert _hot_col(a2_row) == "-"
+
+
+def test_load_hot_examples_reads_the_published_skew_matrix():
+    hot = load_hot_examples(Path("bench/matrix.toml"), Path("bench/matrix-skew.toml"))
+    assert hot == {"W1S": 2}

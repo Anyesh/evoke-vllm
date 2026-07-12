@@ -17,7 +17,7 @@ import httpx
 
 from bench.arms import load_profile
 from bench.matrix import build_dry_run_plan, load_matrix, render_dry_run
-from bench.report import render_report
+from bench.report import load_hot_examples, render_report
 from bench.runner import run_cell
 from bench.workloads.factory import build_workload, mab_config_from_spec
 from bench.workloads.memory_agent_bench import fetch_rows
@@ -126,7 +126,10 @@ def cmd_report(args: argparse.Namespace) -> int:
     if not results_dir.is_dir():
         print(f"no results directory at {results_dir}", file=sys.stderr)
         return 2
-    report = render_report(results_dir)
+    hot_examples = load_hot_examples(
+        BENCH_DIR / "matrix.toml", BENCH_DIR / "matrix-skew.toml"
+    )
+    report = render_report(results_dir, hot_examples)
     if args.out:
         Path(args.out).write_text(report)
         print(f"wrote {args.out}")
