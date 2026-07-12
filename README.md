@@ -18,12 +18,13 @@ full matrix and rendered report live in `bench/`.
 ## Install
 
 ```bash
-uv add evoke-vllm
+uv add evoke-vllm    # inside a uv project; run `uv init` first if you have none
 # or
 pip install evoke-vllm
 ```
 
-This pulls in `vllm==0.24.0` as a pinned dependency.
+This pulls in `vllm==0.24.0` as a pinned dependency, and vLLM brings torch
+with it: budget roughly 9 GB of disk for a fresh environment.
 
 ## Config sketch
 
@@ -87,6 +88,22 @@ content-addressed regardless of tagging.
 `offload_prompt_only` defaults to `true`, so only prompt and prefill blocks
 are offloaded and eligible for restore; decode-generated blocks are skipped
 unless an operator sets it to `false`.
+
+## Running the tests
+
+```bash
+git clone https://github.com/Anyesh/evoke-vllm
+cd evoke-vllm
+uv sync
+uv run pytest
+```
+
+`uv sync` installs the dev group (pytest, ruff, blake3, datasets) that the
+offline suite needs; installing pytest alone is not enough, since the bench
+workloads import `datasets` at module level. The suite runs CPU-only; one
+test marked `network` is skipped unless you enable real HF Hub access. The
+GPU gates and the benchmark matrix have their own instructions in
+`scripts/README_GATES.md` and `bench/README.md`.
 
 ## Results
 
