@@ -2,9 +2,8 @@
 
 Scrapes ``/metrics`` before and after the workload, issues every request in
 ``workload.requests`` sequentially against ``/v1/chat/completions`` with
-``stream=true`` so time-to-first-token is measurable client-side (spec
-02a-workloads.md section 4: TTFT is "corroborated by client-side first-token
-latency under stream=true"), scores each completion with the workload's own
+``stream=true`` so time-to-first-token is measurable
+client-side, scores each completion with the workload's own
 scorer, and writes one JSON file per cell.
 
 ``httpx.Client`` is passed in rather than constructed here so tests can

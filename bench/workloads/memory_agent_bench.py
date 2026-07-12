@@ -1,7 +1,7 @@
 """MemoryAgentBench workloads (W1 accurate-retrieval, W2 long-range).
 
-Consumes the HF dataset directly rather than the upstream bash harness
-(spec 02a-workloads.md section 1): that harness wires in agentic memory
+Consumes the HF dataset directly rather than the upstream bash harness:
+that harness wires in agentic memory
 frameworks (cognee, letta, hipporag) with conflicting pins, for a "long
 context agent" path this package only needs to concatenate ``context`` and
 one ``question`` per request. ``normalize_answer``, ``exact_match_score``,
@@ -146,8 +146,7 @@ class MabWorkloadConfig:
     # is meaningful. None disables truncation.
     context_token_budget: int | None = None
     # Deterministic first-N cap per example to bound a cell's wall clock
-    # (spec 02a section 5 caps examples for the same reason; W1 otherwise
-    # issues 800 requests per cell). None keeps every question.
+    # (W1 otherwise issues 800 requests per cell). None keeps every question.
     max_questions_per_example: int | None = None
     tokenizer_id: str | None = None
     # example_major issues every question of an example before moving on,

@@ -1,8 +1,7 @@
 """Verdant session replay (W3): rebuild real agent prompts from a trace.
 
-The mechanism follows spec 02a-workloads.md section 2, adjusted for what the
-real trace schema actually carries (``verdant-core/src/trace.rs``,
-``crates/verdant-runtime/src/store.rs``): every ``llm_call`` event in
+The mechanism follows what the recorded trace schema actually
+carries: every ``llm_call`` event in
 the recorded session trace has an empty
 ``prefix_segment_hashes`` list (checked programmatically across all 247
 calls), so the real reuse lineage lives in ``upstream_seqs``, which points at

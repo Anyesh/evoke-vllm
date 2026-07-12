@@ -1,6 +1,6 @@
 """Config surface for evoke_vllm.
 
-Two channels carry EVOKE tuning, matching design spec 01a section 5:
+Two channels carry EVOKE tuning:
 
 - ``EvokeScoringConfig`` is operator-level tuning read from the connector's
   ``kv_connector_extra_config`` under an ``evoke`` sub-key, with env-var
@@ -43,7 +43,7 @@ class EvokeScoringConfig:
     source-role floor and multiplied by a per-request priority.
 
     ``w_attention`` and ``w_coherence`` are carried at zero. They are
-    RFC-track (design spec 03) and have no stock vLLM signal to populate them
+    RFC-track and have no stock vLLM signal to populate them
     with in P1; the fields exist so enabling them later is a configuration
     change, not a rewrite.
     """

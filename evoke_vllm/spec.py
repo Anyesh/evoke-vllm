@@ -5,8 +5,8 @@ reads ``spec_name`` and ``spec_module_path`` from ``kv_connector_extra_config``
 and dynamically imports the module. This is the same route vllm-ascend uses
 for ``NPUOffloadingSpec`` and LMCache uses via the sibling
 ``kv_connector_module_path``; no custom top-level ``KVConnector`` is needed
-because the eviction policy lives in the manager, not the connector (design
-spec 01a section 5). A deployment selects this spec with
+because the eviction policy lives in the manager, not the connector.
+A deployment selects this spec with
 ``spec_name="EvokeOffloadingSpec"`` and
 ``spec_module_path="evoke_vllm.spec"`` in ``kv_connector_extra_config``.
 

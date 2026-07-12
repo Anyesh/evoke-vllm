@@ -1,8 +1,8 @@
 """EVOKE eviction policy: recency, reuse, and client-supplied structure.
 
 Scores each offloaded block from the signals honestly available at
-``CachePolicy`` and ``CPUOffloadingManager`` scope on stock vLLM (design spec
-01a sections 1-2): recency decay since last touch, a reuse-count proxy fed by
+``CachePolicy`` and ``CPUOffloadingManager`` scope on stock vLLM: recency
+decay since last touch, a reuse-count proxy fed by
 the manager, and a source-role floor plus priority multiplier sourced from
 per-request tags. Attention mass and embedding coherence are not scored in
 P1; there is no stock signal for either. ``EvokeScoringConfig`` carries
@@ -139,8 +139,8 @@ class EvokeCachePolicy(CachePolicy):
 
         Called by ``EvokeOffloadingManager.prepare_store`` after ``insert``,
         so source-role and priority tags reach a block that the ABC itself
-        never sees (the ABC only receives ``OffloadKey`` values, per design
-        spec 01a section 1).
+        never sees (the ABC only receives ``OffloadKey`` values, which carry
+        no request identity).
         """
         meta = self.meta.get(key)
         if meta is None:

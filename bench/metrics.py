@@ -12,8 +12,7 @@ against the same installed ``vllm==0.24.0`` build gate_lib.py checks.
 Verified against the installed vllm package
 (``vllm/distributed/kv_transfer/kv_connector/v1/offloading/metrics.py``):
 the deprecated ``vllm:kv_offload_total_bytes`` counter's ``transfer_type``
-label is ``CPU_to_GPU`` / ``GPU_to_CPU`` (mixed case), not the lowercase
-``cpu_to_gpu``/``gpu_to_cpu`` spelling spec 02a-workloads.md's prose uses;
+label is ``CPU_to_GPU`` / ``GPU_to_CPU`` (mixed case);
 matching here is case-insensitive so a future vLLM release normalizing the
 casing does not silently break this parser. The non-deprecated flat counters
 (``vllm:kv_offload_load_bytes`` / ``_store_bytes``, direction in the name,

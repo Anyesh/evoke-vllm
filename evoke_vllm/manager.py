@@ -3,8 +3,8 @@
 ``CachePolicy`` only ever sees ``OffloadKey`` values (a content hash plus
 group index); it has no request identity. ``CPUOffloadingManager``, in
 contrast, receives ``ReqContext`` (``req_id`` and ``kv_transfer_params``) on
-every primitive. Design spec 01a section 1 concludes the package must own
-the manager, not just the policy, so the manager subclass below is where
+every primitive. That asymmetry means the package must own the manager,
+not just the policy: the manager subclass below is where
 ``kv_transfer_params["evoke"]`` tags get attached to keys as they are stored.
 
 The stock manager selects its policy through a ``Literal["lru", "arc"]``
@@ -12,8 +12,8 @@ constructor parameter backed by the private ``_CACHE_POLICIES`` dict, which
 has no registration hook for a third name. ``EvokeOffloadingManager`` does
 not use that parameter; it always constructs an ``EvokeCachePolicy``.
 
-The subclass stays thin per the design's drift-risk mitigation (spec 01a
-section 6): it overrides only public primitives (``__init__``, ``lookup``,
+The subclass stays thin to limit drift against upstream releases: it
+overrides only public primitives (``__init__``, ``lookup``,
 ``prepare_store``) and inherits all ref-counting, block-pool, and event logic
 unchanged.
 """

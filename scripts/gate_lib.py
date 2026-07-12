@@ -120,12 +120,10 @@ def build_session_prefixes(
     turn's token prefix byte-identical across turns, which is what makes
     vLLM's content-addressed block hashing treat turn k+1's prefix as a
     cache hit against turn k's stored blocks instead of a fresh sequence
-    (design spec 01a section 3: a session is a chain of requests sharing a
-    growing hashed prefix).
+    (a session is a chain of requests sharing a growing hashed prefix).
 
     Each session also gets a unique planted "reference code" in its first
-    segment, adapted from the passkey-recall idea in
-    unlearn/scripts/verify_kv_restore.py: it gives fidelity_gate.py's
+    segment, a passkey-recall probe: it gives fidelity_gate.py's
     replay phase something concrete and human-legible to check for besides
     raw token equality.
     """
@@ -406,10 +404,9 @@ def summarize_offload_metrics(text: str) -> OffloadMetricsSummary:
     vllm==0.24.0 (verified against the installed
     vllm/distributed/kv_transfer/kv_connector/v1/offloading/metrics.py)
     emits the deprecated vllm:kv_offload_total_bytes counter with a
-    transfer_type label valued "CPU_to_GPU" / "GPU_to_CPU" (mixed case),
-    not the lowercase "cpu_to_gpu" spelling spec 02a-workloads.md's prose
-    uses. Matching is case-insensitive here so this gate does not silently
-    break on that casing, or on a future vLLM release that normalizes it.
+    transfer_type label valued "CPU_to_GPU" / "GPU_to_CPU" (mixed case).
+    Matching is case-insensitive here so this gate does not silently
+    break on a future vLLM release that normalizes the casing.
     The flat, non-deprecated vllm:kv_offload_load_bytes /
     vllm:kv_offload_store_bytes counters (direction encoded in the metric
     name, no label at all) are the fallback for once the deprecated metric

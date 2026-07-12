@@ -1,8 +1,7 @@
 """Matrix driver: resolves matrix.toml into an ordered list of cells.
 
-Reads the arms x workloads x budgets run matrix from spec
-02a-workloads.md section 6 (27 primary cells plus 6 composition-or-fallback
-cells, 33 total) and, for each cell, knows which server config (arm plus
+Reads the arms x workloads x budgets run matrix from ``matrix.toml``
+(27 primary cells plus 6 composition-or-fallback cells, 33 total) and, for each cell, knows which server config (arm plus
 budget) it needs. Cells are resolved budget-major within each arm so every
 run that shares a server config is contiguous, which is what
 ``group_by_server`` needs to minimize restarts: one ``vllm serve`` per

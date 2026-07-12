@@ -1,7 +1,6 @@
 """Reader for verdant's content-addressed blob store.
 
-Mirrors the on-disk layout defined in
-verdant's ``crates/verdant-runtime/src/store.rs``: a payload for a
+Mirrors the store's on-disk layout: a payload for a
 64-char lowercase blake3 digest lives at ``<root>/<digest[:2]>/<digest>.payload``,
 sharded by the first two hex chars. When ``root`` is ``None``, or a digest is
 absent from the store (evicted, or the store was never populated for a given
