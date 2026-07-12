@@ -12,8 +12,9 @@ with no fork and no patched vLLM required.
 On an agent-style workload, where a hot set of contexts gets revisited every
 loop while cold scans churn past it, scored eviction lifts restore hit rate
 from 32% to 58% over stock LRU and cuts mean hot-request TTFT from 1.03s to
-0.42s at equal task quality (Qwen2.5-7B FP8, RTX 4070 Ti SUPER 16GB). The
-full matrix and rendered report live in `bench/`.
+0.42s at matching task quality, 0.48 vs 0.50 (Qwen2.5-7B FP8, RTX 4070 Ti
+SUPER 16GB). Every number here reads off the W1S table in
+`bench/REPORT.md`, which is rendered from the result JSONs in this repo.
 
 ## Install
 
@@ -120,12 +121,13 @@ restoring saved bytes is more deterministic than recomputing them.
 The benchmark matrix (`bench/README.md`, same 7B setup) compares stock
 vLLM, the stock LRU offload policy, this policy, and composition with
 LMCache across four CPU budgets. Three regimes fall out. With re-access
-skewed toward a hot set and the CPU budget above that hot set, scored
-eviction beats stock LRU 58% to 32% on restore hit rate and 0.42s to
-1.03s on mean hot-request TTFT, at equal task quality. With uniform
-re-access, recency is already the right ranking: it ties LRU at three of
-four budgets and loses one cell (21% vs 33% restore hits at the 3 GiB
-budget, single run). With the budget below the hot set, both policies
+skewed toward a hot set and the CPU budget above that hot set (the W1S
+rows in `bench/REPORT.md`, 3 GiB budget), scored eviction beats stock LRU
+58% to 32% on restore hit rate and 0.42s to 1.03s on mean hot-request
+TTFT, at matching task quality (0.48 vs 0.50). With uniform re-access,
+recency is already the right ranking: it ties LRU at three of four
+budgets and loses one cell (W1 at the 3 GiB budget: 21% vs 33% restore
+hits at identical quality, single run). With the budget below the hot set, both policies
 collapse together and the useful knob is `store_threshold`, not scoring.
 Scored eviction earns its keep when the workload has a hot set; under
 uniform re-access, stock LRU is already optimal.
