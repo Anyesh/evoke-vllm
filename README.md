@@ -119,7 +119,9 @@ LMCache across four CPU budgets. The regime map from those runs: with
 re-access skewed toward a hot set and the CPU budget above that hot set,
 scored eviction beats stock LRU 58% to 32% on restore hit rate and 0.42s
 to 1.03s on mean hot-request TTFT, at equal task quality. With uniform
-re-access it ties LRU, since recency is already the right ranking there.
+re-access, recency is already the right ranking: it ties LRU at three of
+four budgets and loses one cell (21% vs 33% restore hits at the 3 GiB
+budget, single run).
 With the budget below the hot set both policies collapse together and the
 useful knob is `store_threshold`, not scoring. If your workload re-accesses
 its context uniformly, this package will not beat the stock LRU policy,
