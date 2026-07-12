@@ -1,6 +1,6 @@
 [project]
 name = "evoke-vllm"
-version = "0.1.0"
+version = "0.1.1"
 description = "Relevance-driven CPU KV-cache offload policy for stock vLLM"
 readme = "README.md"
 license = "Apache-2.0"
